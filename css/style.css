@@ -233,8 +233,10 @@ img {
   color: var(--color-text);
 }
 
-.nav__logo-icon {
-  color: var(--color-bg-dark);
+.nav__logo-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
 }
 
 .nav__links {
@@ -1027,8 +1029,11 @@ img {
   margin-bottom: 12px;
 }
 
-.footer__logo-icon {
-  color: var(--color-text-light-secondary);
+.footer__logo-img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: brightness(0) invert(1) opacity(0.7);
 }
 
 .footer__tagline {
