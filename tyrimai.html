@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI adopcija Europoje — nclaude</title>
-  <meta name="description" content="Interaktyvus žemėlapis: kaip AI naudojamas 29 Europos šalyse, kurios profesijos pirmautoja, ir ką tai reiškia jūsų verslui.">
+  <meta name="description" content="Anthropic Economic Index duomenys: kaip AI naudojamas Europoje, kurios šalys ir profesijos pirmautoja, ir ką tai reiškia jūsų verslui.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -53,13 +53,13 @@
     </div>
     <div class="container">
       <div class="research-hero__content reveal">
-        <div class="research-hero__badge">AI adopcija Europoje</div>
+        <div class="research-hero__badge">Anthropic Economic Index</div>
         <h1 class="research-hero__title">
           Kaip Europa
           <span class="research-hero__title-accent">naudoja AI</span>
         </h1>
         <p class="research-hero__text">
-          Išanalizavome milijonų AI pokalbių duomenis ir pateikiame aiškų vaizdą, kaip dirbtinis intelektas keičia Europos darbo rinką — kurios šalys pirmauja, kurie sektoriai naudoja daugiausiai, ir kur slypi galimybės jūsų verslui.
+          Remiantis Anthropic Economic Index duomenimis ir milijonais AI pokalbių analize, atskleidžiame, kaip dirbtinis intelektas keičia Europos darbo rinką — ir kur slypi didžiausios galimybės jūsų verslui.
         </p>
       </div>
     </div>
@@ -89,203 +89,313 @@
     </div>
   </section>
 
-  <!-- Interactive Map Explorer -->
-  <section class="explorer" id="explorer">
+  <!-- Tabbed Explorer -->
+  <section class="research-tabs">
     <div class="container">
-
-      <!-- Filter pills -->
-      <div class="explorer__filters reveal">
-        <button class="filter-btn filter-btn--active" data-filter="usage">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 20V10M12 20V4M6 20v-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          Naudojimo indeksas
-        </button>
-        <button class="filter-btn" data-filter="augmentation">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          Augmentacija vs. Automatizacija
-        </button>
-        <button class="filter-btn" data-filter="jobs">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="7" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" stroke="currentColor" stroke-width="2"/></svg>
-          Profesijos
-        </button>
+      <div class="tabs-nav reveal" role="tablist">
+        <button class="tabs-nav__item active" role="tab" data-tab="countries" aria-selected="true">Šalių naudojimas</button>
+        <button class="tabs-nav__item" role="tab" data-tab="jobs" aria-selected="false">Profesijų naršyklė</button>
+        <button class="tabs-nav__item" role="tab" data-tab="augauto" aria-selected="false">Augmentacija vs. Automatizacija</button>
       </div>
 
-      <!-- Map + Detail layout -->
-      <div class="explorer__layout">
-        <div class="explorer__main">
-          <!-- Filter info -->
-          <div class="explorer__info" id="explorer-info"></div>
-
-          <!-- SVG Map -->
-          <div class="explorer__map-wrap">
-            <svg class="geo-map" id="geo-map" viewBox="10 45 480 370" xmlns="http://www.w3.org/2000/svg">
-              <!-- Iceland -->
-              <g class="geo-tile" data-country="IS">
-                <rect x="40" y="70" width="34" height="26" rx="4"/>
-                <text x="57" y="83" text-anchor="middle" dominant-baseline="central">IS</text>
+      <!-- ==================== TAB 1: Country Usage ==================== -->
+      <div class="tab-panel active" id="tab-countries">
+        <div class="country-layout">
+          <div>
+              <svg class="geo-map" id="geo-map" viewBox="356.3 316.2 120.0 128.5" xmlns="http://www.w3.org/2000/svg">
+              <g class="geo-country" data-country="AT">
+                <path d="M430.46,403.459l-0.562,1.167l0.483,0.83l2.015-0.415h1.711l1.857,1.572l3.95-0.717l2.904-1.729l0.743-1.167l-0.112-1.504l-2.611-1.954l-3.501,0.035l-0.294,1.988l-3.683,1.797L430.46,403.459L430.46,403.459z"/>
+                <text x="436.7" y="403.1">AT</text>
               </g>
-              <!-- Finland -->
-              <g class="geo-tile" data-country="FI">
-                <rect x="400" y="80" width="34" height="26" rx="4"/>
-                <text x="417" y="93" text-anchor="middle" dominant-baseline="central">FI</text>
+              <g class="geo-country" data-country="BE">
+                <path d="M414.019,391.704l-0.554,1.383l5.947,3.925l0.4,0.051l0.375-1.094l0.837-0.588l-1.336-1.499h-0.916l-1.255-1.426L414.019,391.704L414.019,391.704z"/>
+                <text x="417.2" y="394.4">BE</text>
               </g>
-              <!-- Norway -->
-              <g class="geo-tile" data-country="NO">
-                <rect x="280" y="90" width="34" height="26" rx="4"/>
-                <text x="297" y="103" text-anchor="middle" dominant-baseline="central">NO</text>
+              <g class="geo-country" data-country="BG">
+                <path d="M457.092,414.066l0.139,4.305l1.452,3.025l5.454,0.095l2.455-1.737l2.412-0.959l-0.588-2.75l0.545-1.469l-1.228-0.641l-1.687,0.139l-1.323,1.332l-5.549,0.043L457.092,414.066L457.092,414.066z"/>
+                <text x="463.0" y="417.7">BG</text>
               </g>
-              <!-- Sweden -->
-              <g class="geo-tile" data-country="SE">
-                <rect x="320" y="115" width="34" height="26" rx="4"/>
-                <text x="337" y="128" text-anchor="middle" dominant-baseline="central">SE</text>
+              <g class="geo-country" data-country="CH">
+                <path d="M423.787,402.82l-3.771,4.011l0.078,0.405l1.547-0.483l1.393,1.937l2.352-0.83l1.625,1.263l0.667-0.38l2.005-3.146l-0.511-0.484l-1.979-0.051l-0.959-1.963L423.787,402.82L423.787,402.82z"/>
+                <text x="424.8" y="406.0">CH</text>
               </g>
-              <!-- Estonia -->
-              <g class="geo-tile" data-country="EE">
-                <rect x="395" y="140" width="34" height="26" rx="4"/>
-                <text x="412" y="153" text-anchor="middle" dominant-baseline="central">EE</text>
+              <g class="geo-country" data-country="CZ">
+                <path d="M437.202,398.921h2.567h1.263l2.049,1.461l3.795-3.155l-3.683-2.627l-3.648-1.765l-2.498,0.45l-3.389,2.178L437.202,398.921L437.202,398.921z"/>
+                <text x="440.3" y="396.6">CZ</text>
               </g>
-              <!-- Latvia -->
-              <g class="geo-tile" data-country="LV">
-                <rect x="390" y="168" width="34" height="26" rx="4"/>
-                <text x="407" y="181" text-anchor="middle" dominant-baseline="central">LV</text>
+              <g class="geo-country" data-country="DE">
+                <path d="M422.257,384.234l3.086-0.5v-2.178l2.584-0.425l1.418,1.427l1.495,0.164l2.334-1.012l2.083,0.588l1.832,1.592l0.251,5.955l1.832,2.438l-2.411,0.337l-4.003,2.515l0.338,0.839l3.579,3.354l-0.251,1.677l-3.328,1.677l-3.085,0.086l-0.753,1.59h-1.581l-0.752-1.676l-2.749-0.675l-0.088-2.767l-1.39-0.77l0.114-1.861l-0.406-1.328l-1.982-1.824l0.414-2.854l2.161-1.011L422.257,384.234L422.257,384.234z"/>
+                <text x="429.8" y="392.7">DE</text>
               </g>
-              <!-- Denmark -->
-              <g class="geo-tile" data-country="DK">
-                <rect x="275" y="175" width="34" height="26" rx="4"/>
-                <text x="292" y="188" text-anchor="middle" dominant-baseline="central">DK</text>
+              <g class="geo-country" data-country="DK">
+                <path d="M427.123,370.076l-3.586,3.968l-0.13,2.584l1.635,4.263l2.559-0.484l-0.319-3.483l1.764-1.971l-0.034-1.548l-1.245-3.223L427.123,370.076L427.123,370.076z"/>
+                <path d="M428.979,377.354l-1.062,0.229v1.583l1.128,0.875l0.997-0.25l-0.243-1.503L428.979,377.354z"/>
+                <path d="M432.306,375.848l-0.949,0.23l-1.056,0.968l0.448,1.954l1.292,0.507l-1.334,0.535l-0.255,0.685h2.005l0.602-1.099l-0.768-0.378l0.25-0.962l0.916-1.205l-0.25-1.042L432.306,375.848z"/>
+                <text x="425.2" y="375.5">DK</text>
               </g>
-              <!-- Lithuania -->
-              <g class="geo-tile" data-country="LT">
-                <rect x="385" y="196" width="34" height="26" rx="4"/>
-                <text x="402" y="209" text-anchor="middle" dominant-baseline="central">LT</text>
+              <g class="geo-country" data-country="EE">
+                <path d="M462.562,363.299l-4.84-0.173l-3.068,1.875l-0.043,1.392l1.987,1.875l6.182,1.047L462.562,363.299L462.562,363.299z"/>
+                <path d="M452.236,364.042l-1.308,0.44l1.308,0.226l0.595,0.69l0.711-0.852l-0.709-1.215L452.236,364.042z"/>
+                <path d="M452.792,365.792l-1.862,0.833l-0.643,1.111l0.643,0.722l2.362-0.875l1.137-0.752L452.792,365.792z"/>
+                <text x="458.7" y="366.2">EE</text>
               </g>
-              <!-- Ireland -->
-              <g class="geo-tile" data-country="IE">
-                <rect x="140" y="195" width="34" height="26" rx="4"/>
-                <text x="157" y="208" text-anchor="middle" dominant-baseline="central">IE</text>
+              <g class="geo-country" data-country="ES">
+                <path d="M402.565,416.322h-11.014l-2.222-1.004l-1.071,0.078l-1.297,2.696l0.458,2.775l4.21,0.389l0.536,1.771l-1.833,10.33l0.078,1.851l2.981,1.617l3.439,0.232l6.881-1.694l3.363-4.233l0.077-4.313l5.965-5.395l0.302-2.386l-5.428-0.078L402.565,416.322L402.565,416.322z"/>
+                <path d="M413.578,426.877l-1.375,0.467l0.304,1.235h1.988l0.839-0.925L413.578,426.877L413.578,426.877z"/>
+                <text x="400.2" y="426.2">ES</text>
               </g>
-              <!-- United Kingdom -->
-              <g class="geo-tile" data-country="UK">
-                <rect x="185" y="185" width="34" height="26" rx="4"/>
-                <text x="202" y="198" text-anchor="middle" dominant-baseline="central">UK</text>
+              <g class="geo-country" data-country="FI">
+                <path d="M453.072,340.202l1.79,0.786l1.104,2.074l-1.104,1.436l-5.55,6.068l-0.952,3.199l1.271,4.633l4.278,3.199l5.706-2.715l4.598-0.64l4.279-6.872l-3.173-7.512l-3.018-7.192l0.477-4.633l-1.901-0.32l-0.492-3.38l-2.559-4.175l-2.836,1.962l-1.114,4.556l-3.008-1.807l-4.185-1.021l-0.934,1.09l1.607,1.453l2.931-0.053l2.359,3.812L453.072,340.202L453.072,340.202z"/>
+                <text x="457.1" y="342.9">FI</text>
               </g>
-              <!-- Netherlands -->
-              <g class="geo-tile" data-country="NL">
-                <rect x="245" y="215" width="34" height="26" rx="4"/>
-                <text x="262" y="228" text-anchor="middle" dominant-baseline="central">NL</text>
+              <g class="geo-country" data-country="FR">
+                <path d="M412.973,393.588l-1.91,0.467l-3.82,4.158l-1.149,0.078l-1.53-1.081l-0.993,0.233l-0.762,2.386l-5.584,0.155l0.156,1.236l3.82,2.543l4.435,3.543l-0.077,4.236l-2.368,4.157l5.126,2.464l5.204,0.154l1.606-1.85l3.286,0.078l0.916,0.848l3.285-0.233l1.686-2.162l-2.145-2.541l-0.155-1.616l0.458-1.771l-1.071-1.539l-1.833,0.535l-0.232-1.383l4.054-4.469v-2.697l-2.348-0.767l-1.432-0.987L412.973,393.588L412.973,393.588z"/>
+                <path d="M428.039,418.016l-1.687,1.695l-0.154,1.538l1.374,0.847l0.536-0.076l0.303-2.24L428.039,418.016L428.039,418.016z"/>
+                <text x="410.8" y="406.0">FR</text>
               </g>
-              <!-- Belgium -->
-              <g class="geo-tile" data-country="BE">
-                <rect x="240" y="245" width="34" height="26" rx="4"/>
-                <text x="257" y="258" text-anchor="middle" dominant-baseline="central">BE</text>
+              <g class="geo-country" data-country="GR">
+                <path d="M453.004,427.213l-0.096,1.15l4.003,2.014l1.911,0.734l-1.003,1.055l-2.23,0.227l-0.319,1.01l0.771,1.738l2.498,1.33l1.09,0.096l0.138-2.981l1.635-1.972l-4.46-5.272l0.589-1.789l1.046-0.043l1.591,1.279l1.002-0.501l0.319-1.79l3.732,0.534l1.134-3.239l-1.953,1.375l-5.731-0.14l-3.726,1.929L453.004,427.213L453.004,427.213z"/>
+                <path d="M461.69,438.442l1.408,0.043l0.589,0.873h2.05l1.363-0.501l0.459,0.553l-0.907,1.192l-4.002,0.139l-0.728-0.959l-0.77-0.458L461.69,438.442L461.69,438.442z"/>
+                <text x="459.6" y="428.7">GR</text>
               </g>
-              <!-- Germany -->
-              <g class="geo-tile" data-country="DE">
-                <rect x="290" y="230" width="34" height="26" rx="4"/>
-                <text x="307" y="243" text-anchor="middle" dominant-baseline="central">DE</text>
+              <g class="geo-country" data-country="HR">
+                <path d="M443.417,407.816l-3.051,2.515h-3.095l-0.372,2.178l1.418,0.372l0.709-1.055l1.114,0.977l0.891,3.112l6.109,2.853l0.605-0.691l-6.197-6.396l0.631-1.166l5.888-0.226l0.596-1.876l-3.838,0.111L443.417,407.816L443.417,407.816z"/>
+                <text x="442.8" y="413.3">HR</text>
               </g>
-              <!-- Poland -->
-              <g class="geo-tile" data-country="PL">
-                <rect x="360" y="215" width="34" height="26" rx="4"/>
-                <text x="377" y="228" text-anchor="middle" dominant-baseline="central">PL</text>
+              <g class="geo-country" data-country="HU">
+                <path d="M444.386,403.01l-1.003,1.573l0.078,2.403l1.599,0.82l4.919,0.147l6.854-5.774l0.034-1.279l-0.742-0.371l-4.953,2.248L444.386,403.01L444.386,403.01z"/>
+                <text x="450.1" y="404.2">HU</text>
               </g>
-              <!-- France -->
-              <g class="geo-tile" data-country="FR">
-                <rect x="220" y="290" width="34" height="26" rx="4"/>
-                <text x="237" y="303" text-anchor="middle" dominant-baseline="central">FR</text>
+              <g class="geo-country" data-country="IE">
+                <path d="M394.915,383.085l-0.786,5.187l-6.975,2.56h-2.223l-1.582-1.115v-0.96l3.492-2.238l-0.951-1.92l0.156-2.714l3.018,0.155l1.383-3.25l-0.183,2.887l2.344,1.858L394.915,383.085L394.915,383.085z"/>
+                <text x="389.1" y="384.8">IE</text>
               </g>
-              <!-- Czech Republic -->
-              <g class="geo-tile" data-country="CZ">
-                <rect x="325" y="258" width="34" height="26" rx="4"/>
-                <text x="342" y="271" text-anchor="middle" dominant-baseline="central">CZ</text>
+              <g class="geo-country" data-country="IS">
+                <path d="M366.261,340.521l-1.693-0.959l-2.283,1.443l-1.962,1.814l0.052,1.013l2.541,0.319l-0.156,1.815l-0.898,0.908l0.217,0.588l2.541,0.164v2.938l3.656,0.641l2.17,1.229l2.437,0.104l4.186-2.083l3.231-4.271l0.053-2.887l-1.963-1.66l-1.642-1.392l-0.743,0.536l-1.115,1.443l-1.271-0.164l-1.271-1.393l-1.642,0.156l-2.386,1.979l-1.437,1.547l-0.795-0.69l-0.053-1.712l0.795-0.536L366.261,340.521L366.261,340.521z"/>
+                <text x="370.3" y="346.1">IS</text>
               </g>
-              <!-- Slovakia -->
-              <g class="geo-tile" data-country="SK">
-                <rect x="360" y="260" width="34" height="26" rx="4"/>
-                <text x="377" y="273" text-anchor="middle" dominant-baseline="central">SK</text>
+              <g class="geo-country" data-country="IT">
+                <path d="M423.233,409.391l-0.535,1.356l0.146,1.478l2.065,2.412l3.25-0.113l7.175,8.334l4.479,1.297l2.646,2.498l0.631,5.695l1.417-0.828l1.229-3.104l-0.303-2.229l2.101-0.19l0.304-1.263l-5.922-2.834l-5.619-5.523l-2.238-3.303l-0.545-3.137l2.861-0.684l-0.734-2.066l-1.755-1.478l-1.513-0.069l-2.108,0.58l-1.99,2.781l-1.201,0.795l-1.858-1.141L423.233,409.391L423.233,409.391z"/>
+                <path d="M440.668,431.898l-1.253-0.674l-4.278,0.674l0.146,1.158l3.847,1.937l0.579,0.631l1.012,0.147L440.668,431.898L440.668,431.898z"/>
+                <path d="M427.806,423.566l-2.289,1.158l0.303,4.469l1.833,0.311l1.374-1.312v-4.235L427.806,423.566L427.806,423.566z"/>
+                <text x="433.3" y="420.0">IT</text>
               </g>
-              <!-- Switzerland -->
-              <g class="geo-tile" data-country="CH">
-                <rect x="270" y="285" width="34" height="26" rx="4"/>
-                <text x="287" y="298" text-anchor="middle" dominant-baseline="central">CH</text>
+              <g class="geo-country" data-country="LT">
+                <path d="M452.14,375.236l-2.146,0.363l0.173,2.025l3.355,0.25l1.27,1.042l0.333,1.81l1.034,1.443l3.069-0.13l2.938-3.743l-0.172-2.222l-5.533-0.867L452.14,375.236z"/>
+                <text x="456.1" y="378.7">LT</text>
               </g>
-              <!-- Austria -->
-              <g class="geo-tile" data-country="AT">
-                <rect x="320" y="286" width="34" height="26" rx="4"/>
-                <text x="337" y="299" text-anchor="middle" dominant-baseline="central">AT</text>
+              <g class="geo-country" data-country="LV">
+                <path d="M462.823,369.964l-6.362-1.037l-1.086,2.823l-1.833,0.548l-0.959-1.173l-0.962-1.811l-1.038,0.762l-0.589,3.132v1.708l2.242-0.375l4.665,0.083l5.617,1.044l2.249-0.657l-0.13-2.524L462.823,369.964L462.823,369.964z"/>
+                <text x="457.4" y="372.3">LV</text>
               </g>
-              <!-- Hungary -->
-              <g class="geo-tile" data-country="HU">
-                <rect x="365" y="290" width="34" height="26" rx="4"/>
-                <text x="382" y="303" text-anchor="middle" dominant-baseline="central">HU</text>
+              <g class="geo-country" data-country="NL">
+                <path d="M421.349,384.572l-3.915,1.928l0.829,0.752l0.088,1.928l-0.829-0.164l-0.917-1.426l-2.188,3.467l3.363,0.699l1.253,1.323l0.666,0.017l0.44-2.99l2.117-0.891L421.349,384.572L421.349,384.572z"/>
+                <text x="418.3" y="389.3">NL</text>
               </g>
-              <!-- Romania -->
-              <g class="geo-tile" data-country="RO">
-                <rect x="410" y="295" width="34" height="26" rx="4"/>
-                <text x="427" y="308" text-anchor="middle" dominant-baseline="central">RO</text>
+              <g class="geo-country" data-country="NO">
+                <path d="M460.567,327.409l1.747-1.279l-0.157-1.435l-1.106-0.641l0.157-1.754h0.95v-0.96l-4.123-1.114l-6.181,0.64l-0.631,2.714l-1.428-0.477l-0.951-1.599l-3.017,0.155l-0.32,3.033l-1.426,0.641l-0.795-1.6l-6.345,5.109l1.271,1.436l-2.378,1.115l-5.393,10.701l-1.901,1.279l0.155,0.959l1.9,0.959l-0.475,2.074l-3.173-0.164l-0.952-1.115l-2.057,2.395l-1.271,0.959l-0.32,2.24l-1.105,0.64l-2.854,0.64l-1.426,4.479l0.951,7.348l1.106,3.354l1.271,1.279l2.853-0.156l4.124-3.994l1.581-2.713l0.478,3.992l2.697-4.789l0.154-13.424l2.195-1.383l0.657-7.408l6.655-9.586l3.173-1.115l1.427-1.755l4.754,1.115l2.377,1.435l0.796-3.992l3.968-2.396L460.567,327.409L460.567,327.409z"/>
+                <text x="436.6" y="349.8">NO</text>
               </g>
-              <!-- Slovenia -->
-              <g class="geo-tile" data-country="SI">
-                <rect x="310" y="314" width="34" height="26" rx="4"/>
-                <text x="327" y="327" text-anchor="middle" dominant-baseline="central">SI</text>
+              <g class="geo-country" data-country="PL">
+                <path d="M457.109,390.184l0.733,1.348l0.174,1.435l-0.604,1.392l-1.383,2.664l-1.167,0.526l-1.514-0.657l-0.908,0.043l-2.204,0.83l-2.506-0.742l-4.062-2.879l-3.978-2.135l-1.6-2.438l-0.303-5.75l3.112-2.705l4.062-1.35l1.328-0.138l0.315,1.007l1.725,0.692l4.766,0.09l1.47-0.043l2.421,3.708l-0.604,1.521l0.259,1.789L457.109,390.184L457.109,390.184z"/>
+                <text x="447.9" y="388.7">PL</text>
               </g>
-              <!-- Croatia -->
-              <g class="geo-tile" data-country="HR">
-                <rect x="348" y="326" width="34" height="26" rx="4"/>
-                <text x="365" y="339" text-anchor="middle" dominant-baseline="central">HR</text>
+              <g class="geo-country" data-country="PT">
+                <path d="M387.499,421.716l-0.536,7.478l-1.53,1.384l0.156,0.846l1.071,1.772l-0.691,2.16l1.149,0.39l2.68-0.312l-0.155-2.16l1.756-10.02l-0.382-1.383L387.499,421.716L387.499,421.716z"/>
+                <text x="388.4" y="428.7">PT</text>
               </g>
-              <!-- Italy -->
-              <g class="geo-tile" data-country="IT">
-                <rect x="275" y="340" width="34" height="26" rx="4"/>
-                <text x="292" y="353" text-anchor="middle" dominant-baseline="central">IT</text>
+              <g class="geo-country" data-country="RO">
+                <path d="M457.731,401.281l-0.226,1.279l-5.005,4.166l4.184,6.137l2.682,1.877h4.823l1.591-1.331l2.135-0.276l1.591,0.959l2.818-3.207l-0.545-1.607l-2.861-0.734l-1.953-0.095l0.094-2.749l-2.593-4.08L457.731,401.281L457.731,401.281z"/>
+                <text x="462.4" y="408.0">RO</text>
               </g>
-              <!-- Serbia -->
-              <g class="geo-tile" data-country="RS">
-                <rect x="384" y="325" width="34" height="26" rx="4"/>
-                <text x="401" y="338" text-anchor="middle" dominant-baseline="central">RS</text>
+              <g class="geo-country" data-country="RS">
+                <path d="M452.001,407.279l-1.772,1.332h-0.863l-0.588,1.832l2.092,2.43l0.139,1.928l-0.882,1.246l3.068,3.197l3.317-1.012l-0.274-4.721L452.001,407.279L452.001,407.279z"/>
+                <text x="452.6" y="413.3">RS</text>
               </g>
-              <!-- Bulgaria -->
-              <g class="geo-tile" data-country="BG">
-                <rect x="420" y="340" width="34" height="26" rx="4"/>
-                <text x="437" y="353" text-anchor="middle" dominant-baseline="central">BG</text>
+              <g class="geo-country" data-country="SE">
+                <path d="M445.232,329.52l1.693,1.563h3.173l1.746,3.354l0.477,5.748l-4.278,3.035v3.033l-3.017,4.158l-1.746,0.154l-2.378,3.994l0.155,3.838l4.124,3.035l-0.319,1.754l-1.582,2.396l-2.377,2.074l0.155,6.872l-3.647,1.279l-1.271,2.713h-1.747l-0.949-4.789l-3.969-6.084l3.26-5.455l0.225-13.477l2.248-1.236l0.545-7.709l6.405-9.172L445.232,329.52L445.232,329.52z"/>
+                <path d="M445.898,368.927l-1.824,1.443l0.917,2.118l1.616-1.573L445.898,368.927L445.898,368.927z"/>
+                <text x="440.9" y="354.0">SE</text>
               </g>
-              <!-- Portugal -->
-              <g class="geo-tile" data-country="PT">
-                <rect x="130" y="365" width="34" height="26" rx="4"/>
-                <text x="147" y="378" text-anchor="middle" dominant-baseline="central">PT</text>
+              <g class="geo-country" data-country="SI">
+                <path d="M442.708,405.076l-2.195,1.314l-4.097,0.898l0.82,2.368l2.87,0.034l2.646-2.213L442.708,405.076L442.708,405.076z"/>
+                <text x="439.6" y="407.4">SI</text>
               </g>
-              <!-- Spain -->
-              <g class="geo-tile" data-country="ES">
-                <rect x="175" y="355" width="34" height="26" rx="4"/>
-                <text x="192" y="368" text-anchor="middle" dominant-baseline="central">ES</text>
+              <g class="geo-country" data-country="SK">
+                <path d="M443.607,400.875l0.597,0.527l0.077,0.898l6.596-0.146l4.875-2.102l-0.077-2.135l-0.934,0.415l-1.34-0.718l-0.821-0.035l-2.161,0.865l-2.938-0.709L443.607,400.875L443.607,400.875z"/>
+                <text x="449.7" y="399.9">SK</text>
               </g>
-              <!-- Greece -->
-              <g class="geo-tile" data-country="GR">
-                <rect x="390" y="370" width="34" height="26" rx="4"/>
-                <text x="407" y="383" text-anchor="middle" dominant-baseline="central">GR</text>
+              <g class="geo-country" data-country="UK">
+                <path d="M400.629,367.984l-1.582,2.395l0.631,0.959h3.648v1.6l-0.952,1.278l0.632,3.354l2.058,3.994l1.581,3.672l2.533,0.959l1.105,1.92l-0.155,1.755l-1.582,0.959l-0.156,0.795l1.106,0.64l-0.951,1.279l-2.221,0.959l-4.279-0.477l-6.664,3.035l-2.221-1.115l6.345-3.674l-0.796-0.477l-3.328-0.32l2.058-3.033l0.319-2.56l2.696-0.319l-0.475-4.953l-3.174-0.155l-0.95-1.115l0.155-3.674l-1.901,0.156l1.901-6.388l3.492-2.56L400.629,367.984L400.629,367.984z"/>
+                <path d="M393.974,378.693l-2.853,0.32l-0.156,2.56l1.901,1.278l2.058-0.475l0.796-1.436L393.974,378.693L393.974,378.693z"/>
+                <text x="401.7" y="383.0">UK</text>
               </g>
             </svg>
+            <div class="map-legend">
+              <span>Mažiau</span>
+              <div class="map-legend__scale">
+                <div class="map-legend__swatch" style="background:#d6f0e8"></div>
+                <div class="map-legend__swatch" style="background:#b3e2d6"></div>
+                <div class="map-legend__swatch" style="background:#8ad0c0"></div>
+                <div class="map-legend__swatch" style="background:#5cb8a5"></div>
+                <div class="map-legend__swatch" style="background:#3a9e8b"></div>
+                <div class="map-legend__swatch" style="background:#1a7f6d"></div>
+              </div>
+              <span>Daugiau AI naudojimo</span>
+            </div>
           </div>
 
-          <!-- Legend -->
-          <div class="explorer__legend" id="map-legend"></div>
-
-          <p class="explorer__map-hint">Paspauskite ant šalies, kad pamatytumėte detales</p>
+          <!-- Country Detail Panel -->
+          <div class="country-detail" id="country-detail">
+            <h2 class="country-detail__name" id="detail-name">Lietuva</h2>
+            <div class="country-detail__stats">
+              <div class="country-stat">
+                <span class="country-stat__value" id="detail-rank">23 / 116</span>
+                <span class="country-stat__label">Naudojimo reitingas</span>
+              </div>
+              <div class="country-stat">
+                <span class="country-stat__value" id="detail-aui">2.09x</span>
+                <span class="country-stat__label">Naudojimo indeksas</span>
+              </div>
+            </div>
+            <div class="usage-bar">
+              <div class="usage-bar__label">
+                <span>AI naudojimo indeksas (AUI)</span>
+              </div>
+              <div class="usage-bar__track">
+                <div class="usage-bar__fill" id="detail-bar" style="width: 52%"></div>
+                <div class="usage-bar__marker-expected"></div>
+              </div>
+            </div>
+            <div class="country-tasks">
+              <h3 class="country-tasks__title">Populiariausios užduotys</h3>
+              <div id="detail-tasks">
+                <div class="country-task">
+                  <span class="country-task__num">1.</span>
+                  <span class="country-task__text">Kodo derinimas, taisymas ir refaktoringas</span>
+                  <span class="country-task__pct">6.3%</span>
+                </div>
+                <div class="country-task">
+                  <span class="country-task__num">2.</span>
+                  <span class="country-task__text">Produktų paieška ir palyginimas</span>
+                  <span class="country-task__pct">4.6%</span>
+                </div>
+                <div class="country-task">
+                  <span class="country-task__num">3.</span>
+                  <span class="country-task__text">Svetainių ir aplikacijų kūrimas</span>
+                  <span class="country-task__pct">3.9%</span>
+                </div>
+              </div>
+            </div>
+            <p class="data-source" style="margin-top:16px; border:none; text-align:left; padding:0;">
+              Duomenys: <a href="https://www.anthropic.com/economic-index" target="_blank" rel="noopener">Anthropic Economic Index</a>
+            </p>
+          </div>
         </div>
-
-        <!-- Detail panel -->
-        <div class="explorer__detail" id="explorer-detail"></div>
       </div>
 
-      <!-- Country ranking -->
-      <div class="explorer__ranking reveal">
-        <h3 class="ranking__title" id="ranking-title">Šalių reitingas</h3>
-        <div class="ranking__grid" id="ranking-grid"></div>
+      <!-- ==================== TAB 2: Job Explorer ==================== -->
+      <div class="tab-panel" id="tab-jobs">
+        <div class="job-explorer-layout">
+          <div>
+            <p style="font-family:var(--font-ui); font-size:13px; color:var(--color-text-tertiary); margin-bottom:16px;">
+              Paspauskite ant kategorijos, kad pamatytumėte detales. Kategorijos pagal O*NET-SOC klasifikaciją.
+            </p>
+            <div class="treemap" id="treemap">
+              <div class="treemap__item treemap__item--computer active" data-job="computer"
+                   style="flex: 0 0 100%; height: 180px;">
+                <span class="treemap__item-name">Kompiuteriai ir matematika</span>
+                <span class="treemap__item-value">37.2%</span>
+              </div>
+              <div class="treemap__item treemap__item--education" data-job="education"
+                   style="flex: 0 0 32%; height: 100px;">
+                <span class="treemap__item-name">Švietimas ir bibliotekos</span>
+                <span class="treemap__item-value">12.0%</span>
+              </div>
+              <div class="treemap__item treemap__item--arts" data-job="arts"
+                   style="flex: 0 0 28%; height: 100px;">
+                <span class="treemap__item-name">Menas, dizainas, medija</span>
+                <span class="treemap__item-value">10.3%</span>
+              </div>
+              <div class="treemap__item treemap__item--management" data-job="management"
+                   style="flex: 0 0 19%; height: 100px;">
+                <span class="treemap__item-name">Valdymas</span>
+                <span class="treemap__item-value">7.8%</span>
+              </div>
+              <div class="treemap__item treemap__item--business" data-job="business"
+                   style="flex: 0 0 17%; height: 100px;">
+                <span class="treemap__item-name">Verslas ir finansai</span>
+                <span class="treemap__item-value">6.2%</span>
+              </div>
+              <div class="treemap__item treemap__item--science" data-job="science"
+                   style="flex: 0 0 22%; height: 80px;">
+                <span class="treemap__item-name">Mokslas</span>
+                <span class="treemap__item-value">5.1%</span>
+              </div>
+              <div class="treemap__item treemap__item--legal" data-job="legal"
+                   style="flex: 0 0 18%; height: 80px;">
+                <span class="treemap__item-name">Teisė</span>
+                <span class="treemap__item-value">4.5%</span>
+              </div>
+              <div class="treemap__item treemap__item--office" data-job="office"
+                   style="flex: 0 0 18%; height: 80px;">
+                <span class="treemap__item-name">Biuro administracija</span>
+                <span class="treemap__item-value">3.7%</span>
+              </div>
+              <div class="treemap__item treemap__item--healthcare" data-job="healthcare"
+                   style="flex: 0 0 16%; height: 80px;">
+                <span class="treemap__item-name">Sveikatos apsauga</span>
+                <span class="treemap__item-value">3.4%</span>
+              </div>
+              <div class="treemap__item treemap__item--sales" data-job="sales"
+                   style="flex: 0 0 12%; height: 80px;">
+                <span class="treemap__item-name">Pardavimai</span>
+                <span class="treemap__item-value">2.8%</span>
+              </div>
+              <div class="treemap__item treemap__item--other" data-job="other"
+                   style="flex: 0 0 10%; height: 80px;">
+                <span class="treemap__item-name">Kita</span>
+                <span class="treemap__item-value">7.0%</span>
+              </div>
+            </div>
+            <p class="treemap-note">Procentai rodo Claude.ai pokalbių dalį, susietą su kiekviena užduočių kategorija. Kategorijos pagal O*NET-SOC kodavimą. Procentai nesudaro 100%, nes taikomi privatumo filtrai.</p>
+          </div>
+          <div class="job-detail" id="job-detail">
+            <h3 class="job-detail__title" id="job-detail-title">Kompiuteriai ir matematika</h3>
+            <div class="job-detail__pct" id="job-detail-pct">37.2%</div>
+            <p class="job-detail__desc" id="job-detail-desc">
+              Didžiausia AI naudojimo kategorija. Apima programinės įrangos kūrimą, derinimą, duomenų mokslą, tinklų administravimą ir matematinę analizę.
+            </p>
+            <h4 style="font-family:var(--font-heading); font-size:14px; font-weight:600; margin-bottom:12px;">Populiariausios užduotys:</h4>
+            <ul class="job-tasks-list" id="job-detail-tasks">
+              <li>
+                <span class="task-text">Programinės įrangos modifikavimas ir klaidų taisymas</span>
+                <span class="task-pct">4.79%</span>
+              </li>
+              <li>
+                <span class="task-text">Klaidų tikrinimas ir derinimas</span>
+                <span class="task-pct">3.00%</span>
+              </li>
+              <li>
+                <span class="task-text">Sistemos administravimas ir trikčių šalinimas</span>
+                <span class="task-pct">1.81%</span>
+              </li>
+              <li>
+                <span class="task-text">Naujų programų kūrimas pagal reikalavimus</span>
+                <span class="task-pct">1.46%</span>
+              </li>
+              <li>
+                <span class="task-text">Svetainių projektavimas ir kūrimas</span>
+                <span class="task-pct">1.19%</span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
 
-      <!-- Contextual: Augmentation (shown when aug filter active) -->
-      <div class="context-panel" id="context-augmentation" style="display:none">
+      <!-- ==================== TAB 3: Augmentation vs Automation ==================== -->
+      <div class="tab-panel" id="tab-augauto">
         <div class="aug-section">
-          <h3 class="context-panel__title">Globalus vaizdas: Augmentacija vs. Automatizacija</h3>
           <div class="aug-bar">
             <div class="aug-bar__visual">
               <div class="aug-bar__seg aug-bar__seg--aug" style="flex: 57;">
@@ -385,113 +495,16 @@
           <div class="aug-insight">
             <h3 class="aug-insight__title">Daugiau naudojimo = daugiau augmentacijos</h3>
             <p class="aug-insight__text">
-              Duomenys rodo aiškią tendenciją: šalyse su didesniu AI naudojimo indeksu, didesnė dalis naudojimo yra augmentacinė. Įmonės, kurios daugiau naudoja AI, daro tai bendradarbiaudamos — AI padeda specialistams dirbti efektyviau, o ne pakeičia juos. Pradedantys naudotojai dažniau deleguoja visą užduotį, tuo tarpu patyrę — dirba kartu su AI iteraciškai.
+              Anthropic tyrimai rodo, kad šalyse su didesniu AI naudojimo indeksu, didesnė dalis naudojimo yra augmentacinė. Tai reiškia, kad įmonės, kurios daugiau naudoja AI, daro tai bendradarbiaudamos — AI padeda specialistams dirbti efektyviau, o ne pakeičia juos. Pradedantys naudotojai dažniau deleguoja visą užduotį, tuo tarpu patyrę — dirba kartu su AI iteraciškai.
             </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Contextual: Jobs (shown when jobs filter active) -->
-      <div class="context-panel" id="context-jobs" style="display:none">
-        <h3 class="context-panel__title">Profesijų kategorijos pagal AI naudojimą</h3>
-        <p class="context-panel__subtitle">Paspauskite ant kategorijos, kad pamatytumėte detales. Kategorijos pagal O*NET-SOC klasifikaciją.</p>
-        <div class="jobs-layout">
-          <div>
-            <div class="treemap" id="treemap">
-              <div class="treemap__item treemap__item--computer active" data-job="computer"
-                   style="flex: 0 0 100%; height: 180px;">
-                <span class="treemap__item-name">Kompiuteriai ir matematika</span>
-                <span class="treemap__item-value">37.2%</span>
-              </div>
-              <div class="treemap__item treemap__item--education" data-job="education"
-                   style="flex: 0 0 32%; height: 100px;">
-                <span class="treemap__item-name">Švietimas ir bibliotekos</span>
-                <span class="treemap__item-value">12.0%</span>
-              </div>
-              <div class="treemap__item treemap__item--arts" data-job="arts"
-                   style="flex: 0 0 28%; height: 100px;">
-                <span class="treemap__item-name">Menas, dizainas, medija</span>
-                <span class="treemap__item-value">10.3%</span>
-              </div>
-              <div class="treemap__item treemap__item--management" data-job="management"
-                   style="flex: 0 0 19%; height: 100px;">
-                <span class="treemap__item-name">Valdymas</span>
-                <span class="treemap__item-value">7.8%</span>
-              </div>
-              <div class="treemap__item treemap__item--business" data-job="business"
-                   style="flex: 0 0 17%; height: 100px;">
-                <span class="treemap__item-name">Verslas ir finansai</span>
-                <span class="treemap__item-value">6.2%</span>
-              </div>
-              <div class="treemap__item treemap__item--science" data-job="science"
-                   style="flex: 0 0 22%; height: 80px;">
-                <span class="treemap__item-name">Mokslas</span>
-                <span class="treemap__item-value">5.1%</span>
-              </div>
-              <div class="treemap__item treemap__item--legal" data-job="legal"
-                   style="flex: 0 0 18%; height: 80px;">
-                <span class="treemap__item-name">Teisė</span>
-                <span class="treemap__item-value">4.5%</span>
-              </div>
-              <div class="treemap__item treemap__item--office" data-job="office"
-                   style="flex: 0 0 18%; height: 80px;">
-                <span class="treemap__item-name">Biuro administracija</span>
-                <span class="treemap__item-value">3.7%</span>
-              </div>
-              <div class="treemap__item treemap__item--healthcare" data-job="healthcare"
-                   style="flex: 0 0 16%; height: 80px;">
-                <span class="treemap__item-name">Sveikatos apsauga</span>
-                <span class="treemap__item-value">3.4%</span>
-              </div>
-              <div class="treemap__item treemap__item--sales" data-job="sales"
-                   style="flex: 0 0 12%; height: 80px;">
-                <span class="treemap__item-name">Pardavimai</span>
-                <span class="treemap__item-value">2.8%</span>
-              </div>
-              <div class="treemap__item treemap__item--other" data-job="other"
-                   style="flex: 0 0 10%; height: 80px;">
-                <span class="treemap__item-name">Kita</span>
-                <span class="treemap__item-value">7.0%</span>
-              </div>
-            </div>
-          </div>
-          <div class="job-detail" id="job-detail">
-            <h3 class="job-detail__title" id="job-detail-title">Kompiuteriai ir matematika</h3>
-            <div class="job-detail__pct" id="job-detail-pct">37.2%</div>
-            <p class="job-detail__desc" id="job-detail-desc">
-              Didžiausia AI naudojimo kategorija. Apima programinės įrangos kūrimą, derinimą, duomenų mokslą, tinklų administravimą ir matematinę analizę.
-            </p>
-            <h4 class="job-detail__subtitle">Populiariausios užduotys:</h4>
-            <ul class="job-tasks-list" id="job-detail-tasks">
-              <li>
-                <span class="task-text">Programinės įrangos modifikavimas ir klaidų taisymas</span>
-                <span class="task-pct">4.79%</span>
-              </li>
-              <li>
-                <span class="task-text">Klaidų tikrinimas ir derinimas</span>
-                <span class="task-pct">3.00%</span>
-              </li>
-              <li>
-                <span class="task-text">Sistemos administravimas ir trikčių šalinimas</span>
-                <span class="task-pct">1.81%</span>
-              </li>
-              <li>
-                <span class="task-text">Naujų programų kūrimas pagal reikalavimus</span>
-                <span class="task-pct">1.46%</span>
-              </li>
-              <li>
-                <span class="task-text">Svetainių projektavimas ir kūrimas</span>
-                <span class="task-pct">1.19%</span>
-              </li>
-            </ul>
           </div>
         </div>
       </div>
 
       <div class="data-source">
-        Šaltiniai: <a href="https://www.anthropic.com/economic-index" target="_blank" rel="noopener">Anthropic Economic Index</a>,
-        <a href="https://huggingface.co/datasets/Anthropic/EconomicIndex" target="_blank" rel="noopener">atvirieji duomenys</a>,
-        O*NET, BLS (2023)
+        Duomenys: <a href="https://www.anthropic.com/economic-index" target="_blank" rel="noopener">Anthropic Economic Index</a> &middot;
+        <a href="https://huggingface.co/datasets/Anthropic/EconomicIndex" target="_blank" rel="noopener">Duomenų rinkinys (HuggingFace)</a> &middot;
+        O*NET, JAV Darbo statistikos biuras (BLS, 2023)
       </div>
     </div>
   </section>
