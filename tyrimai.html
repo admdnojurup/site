@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI adopcija Europoje — nclaude</title>
+  <meta name="description" content="Anthropic Economic Index duomenys: kaip AI naudojamas Europoje, kurios šalys ir profesijos pirmautoja, ir ką tai reiškia jūsų verslui.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/tyrimai.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="index.html" class="nav__logo">
+        <img class="nav__logo-img" src="assets/logo.png" alt="nclaude" width="32" height="32">
+        <span>nclaude</span>
+      </a>
+      <div class="nav__links" id="nav-links">
+        <a href="index.html#paslaugos" class="nav__link">Paslaugos</a>
+        <a href="index.html#procesas" class="nav__link">Procesas</a>
+        <a href="index.html#rezultatai" class="nav__link">Rezultatai</a>
+        <a href="tyrimai.html" class="nav__link nav__link--active">Tyrimai</a>
+      </div>
+      <a href="index.html#kontaktai" class="nav__cta btn btn--primary btn--sm">Susisiekite</a>
+      <button class="nav__hamburger" id="nav-hamburger" aria-label="Atidaryti meniu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu__content">
+      <a href="index.html#paslaugos" class="mobile-menu__link">Paslaugos</a>
+      <a href="index.html#procesas" class="mobile-menu__link">Procesas</a>
+      <a href="index.html#rezultatai" class="mobile-menu__link">Rezultatai</a>
+      <a href="tyrimai.html" class="mobile-menu__link">Tyrimai</a>
+      <a href="index.html#kontaktai" class="btn btn--primary btn--lg">Susisiekite</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="research-hero">
+    <div class="research-hero__bg">
+      <div class="research-hero__gradient"></div>
+    </div>
+    <div class="container">
+      <div class="research-hero__content reveal">
+        <div class="research-hero__badge">Anthropic Economic Index</div>
+        <h1 class="research-hero__title">
+          Kaip Europa
+          <span class="research-hero__title-accent">naudoja AI</span>
+        </h1>
+        <p class="research-hero__text">
+          Remiantis Anthropic Economic Index duomenimis ir milijonais AI pokalbių analize, atskleidžiame, kaip dirbtinis intelektas keičia Europos darbo rinką — ir kur slypi didžiausios galimybės jūsų verslui.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Stats -->
+  <section class="key-stats">
+    <div class="container">
+      <div class="key-stats__grid reveal">
+        <div class="key-stats__card">
+          <div class="key-stats__number">36%</div>
+          <div class="key-stats__label">profesijų naudoja AI bent ketvirtadaliui savo užduočių</div>
+        </div>
+        <div class="key-stats__card">
+          <div class="key-stats__number">57%</div>
+          <div class="key-stats__label">naudojimo yra augmentacija — AI padeda žmonėms, ne juos pakeičia</div>
+        </div>
+        <div class="key-stats__card">
+          <div class="key-stats__number">80%</div>
+          <div class="key-stats__label">vidutinis užduoties laiko sumažėjimas naudojant AI</div>
+        </div>
+        <div class="key-stats__card">
+          <div class="key-stats__number">2.09x</div>
+          <div class="key-stats__label">Lietuvos AI naudojimo indeksas — dvigubai daugiau nei tikėtina</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tabbed Explorer -->
+  <section class="research-tabs">
+    <div class="container">
+      <div class="tabs-nav reveal" role="tablist">
+        <button class="tabs-nav__item active" role="tab" data-tab="countries" aria-selected="true">Šalių naudojimas</button>
+        <button class="tabs-nav__item" role="tab" data-tab="jobs" aria-selected="false">Profesijų naršyklė</button>
+        <button class="tabs-nav__item" role="tab" data-tab="augauto" aria-selected="false">Augmentacija vs. Automatizacija</button>
+      </div>
+
+      <!-- ==================== TAB 1: Country Usage ==================== -->
+      <div class="tab-panel active" id="tab-countries">
+        <div class="country-layout">
+          <div>
+            <div class="europe-map" id="europe-map">
+              <!-- Row 1 -->
+              <div class="europe-tile europe-tile--leading tile-IS" data-country="IS">IS</div>
+              <div class="europe-tile europe-tile--upper tile-NO" data-country="NO">NO</div>
+              <div class="europe-tile europe-tile--upper tile-SE" data-country="SE">SE</div>
+              <div class="europe-tile europe-tile--mid-upper tile-FI" data-country="FI">FI</div>
+              <!-- Row 2 -->
+              <div class="europe-tile europe-tile--upper tile-IE" data-country="IE">IE</div>
+              <div class="europe-tile europe-tile--upper tile-UK" data-country="UK">UK</div>
+              <div class="europe-tile europe-tile--mid tile-DK" data-country="DK">DK</div>
+              <div class="europe-tile europe-tile--mid-upper tile-EE" data-country="EE">EE</div>
+              <div class="europe-tile europe-tile--mid tile-LV" data-country="LV">LV</div>
+              <div class="europe-tile europe-tile--mid tile-LT active" data-country="LT">LT</div>
+              <!-- Row 3 -->
+              <div class="europe-tile europe-tile--lower tile-PT" data-country="PT">PT</div>
+              <div class="europe-tile europe-tile--lower tile-ES" data-country="ES">ES</div>
+              <div class="europe-tile europe-tile--mid tile-FR" data-country="FR">FR</div>
+              <div class="europe-tile europe-tile--mid tile-BE" data-country="BE">BE</div>
+              <div class="europe-tile europe-tile--upper tile-NL" data-country="NL">NL</div>
+              <div class="europe-tile europe-tile--mid tile-DE" data-country="DE">DE</div>
+              <div class="europe-tile europe-tile--emerging tile-PL" data-country="PL">PL</div>
+              <div class="europe-tile europe-tile--lower tile-CZ" data-country="CZ">CZ</div>
+              <div class="europe-tile europe-tile--lower tile-SK" data-country="SK">SK</div>
+              <!-- Row 4 -->
+              <div class="europe-tile europe-tile--lower tile-IT" data-country="IT">IT</div>
+              <div class="europe-tile europe-tile--leading tile-CH" data-country="CH">CH</div>
+              <div class="europe-tile europe-tile--mid tile-AT" data-country="AT">AT</div>
+              <div class="europe-tile europe-tile--emerging tile-HU" data-country="HU">HU</div>
+              <div class="europe-tile europe-tile--emerging tile-RO" data-country="RO">RO</div>
+              <!-- Row 5 -->
+              <div class="europe-tile europe-tile--lower tile-SI" data-country="SI">SI</div>
+              <div class="europe-tile europe-tile--emerging tile-HR" data-country="HR">HR</div>
+              <div class="europe-tile europe-tile--emerging tile-RS" data-country="RS">RS</div>
+              <div class="europe-tile europe-tile--emerging tile-BG" data-country="BG">BG</div>
+              <!-- Row 6 -->
+              <div class="europe-tile europe-tile--emerging tile-GR" data-country="GR">GR</div>
+            </div>
+            <div class="map-legend">
+              <span>Mažiau</span>
+              <div class="map-legend__scale">
+                <div class="map-legend__swatch" style="background:#d6f0e8"></div>
+                <div class="map-legend__swatch" style="background:#b3e2d6"></div>
+                <div class="map-legend__swatch" style="background:#8ad0c0"></div>
+                <div class="map-legend__swatch" style="background:#5cb8a5"></div>
+                <div class="map-legend__swatch" style="background:#3a9e8b"></div>
+                <div class="map-legend__swatch" style="background:#1a7f6d"></div>
+              </div>
+              <span>Daugiau AI naudojimo</span>
+            </div>
+          </div>
+
+          <!-- Country Detail Panel -->
+          <div class="country-detail" id="country-detail">
+            <h2 class="country-detail__name" id="detail-name">Lietuva</h2>
+            <div class="country-detail__stats">
+              <div class="country-stat">
+                <span class="country-stat__value" id="detail-rank">23 / 116</span>
+                <span class="country-stat__label">Naudojimo reitingas</span>
+              </div>
+              <div class="country-stat">
+                <span class="country-stat__value" id="detail-aui">2.09x</span>
+                <span class="country-stat__label">Naudojimo indeksas</span>
+              </div>
+            </div>
+            <div class="usage-bar">
+              <div class="usage-bar__label">
+                <span>AI naudojimo indeksas (AUI)</span>
+              </div>
+              <div class="usage-bar__track">
+                <div class="usage-bar__fill" id="detail-bar" style="width: 52%"></div>
+                <div class="usage-bar__marker-expected"></div>
+              </div>
+            </div>
+            <div class="country-tasks">
+              <h3 class="country-tasks__title">Populiariausios užduotys</h3>
+              <div id="detail-tasks">
+                <div class="country-task">
+                  <span class="country-task__num">1.</span>
+                  <span class="country-task__text">Kodo derinimas, taisymas ir refaktoringas</span>
+                  <span class="country-task__pct">6.3%</span>
+                </div>
+                <div class="country-task">
+                  <span class="country-task__num">2.</span>
+                  <span class="country-task__text">Produktų paieška ir palyginimas</span>
+                  <span class="country-task__pct">4.6%</span>
+                </div>
+                <div class="country-task">
+                  <span class="country-task__num">3.</span>
+                  <span class="country-task__text">Svetainių ir aplikacijų kūrimas</span>
+                  <span class="country-task__pct">3.9%</span>
+                </div>
+              </div>
+            </div>
+            <p class="data-source" style="margin-top:16px; border:none; text-align:left; padding:0;">
+              Duomenys: <a href="https://www.anthropic.com/economic-index" target="_blank" rel="noopener">Anthropic Economic Index</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== TAB 2: Job Explorer ==================== -->
+      <div class="tab-panel" id="tab-jobs">
+        <div class="job-explorer-layout">
+          <div>
+            <p style="font-family:var(--font-ui); font-size:13px; color:var(--color-text-tertiary); margin-bottom:16px;">
+              Paspauskite ant kategorijos, kad pamatytumėte detales. Kategorijos pagal O*NET-SOC klasifikaciją.
+            </p>
+            <div class="treemap" id="treemap">
+              <div class="treemap__item treemap__item--computer active" data-job="computer"
+                   style="flex: 0 0 100%; height: 180px;">
+                <span class="treemap__item-name">Kompiuteriai ir matematika</span>
+                <span class="treemap__item-value">37.2%</span>
+              </div>
+              <div class="treemap__item treemap__item--education" data-job="education"
+                   style="flex: 0 0 32%; height: 100px;">
+                <span class="treemap__item-name">Švietimas ir bibliotekos</span>
+                <span class="treemap__item-value">12.0%</span>
+              </div>
+              <div class="treemap__item treemap__item--arts" data-job="arts"
+                   style="flex: 0 0 28%; height: 100px;">
+                <span class="treemap__item-name">Menas, dizainas, medija</span>
+                <span class="treemap__item-value">10.3%</span>
+              </div>
+              <div class="treemap__item treemap__item--management" data-job="management"
+                   style="flex: 0 0 19%; height: 100px;">
+                <span class="treemap__item-name">Valdymas</span>
+                <span class="treemap__item-value">7.8%</span>
+              </div>
+              <div class="treemap__item treemap__item--business" data-job="business"
+                   style="flex: 0 0 17%; height: 100px;">
+                <span class="treemap__item-name">Verslas ir finansai</span>
+                <span class="treemap__item-value">6.2%</span>
+              </div>
+              <div class="treemap__item treemap__item--science" data-job="science"
+                   style="flex: 0 0 22%; height: 80px;">
+                <span class="treemap__item-name">Mokslas</span>
+                <span class="treemap__item-value">5.1%</span>
+              </div>
+              <div class="treemap__item treemap__item--legal" data-job="legal"
+                   style="flex: 0 0 18%; height: 80px;">
+                <span class="treemap__item-name">Teisė</span>
+                <span class="treemap__item-value">4.5%</span>
+              </div>
+              <div class="treemap__item treemap__item--office" data-job="office"
+                   style="flex: 0 0 18%; height: 80px;">
+                <span class="treemap__item-name">Biuro administracija</span>
+                <span class="treemap__item-value">3.7%</span>
+              </div>
+              <div class="treemap__item treemap__item--healthcare" data-job="healthcare"
+                   style="flex: 0 0 16%; height: 80px;">
+                <span class="treemap__item-name">Sveikatos apsauga</span>
+                <span class="treemap__item-value">3.4%</span>
+              </div>
+              <div class="treemap__item treemap__item--sales" data-job="sales"
+                   style="flex: 0 0 12%; height: 80px;">
+                <span class="treemap__item-name">Pardavimai</span>
+                <span class="treemap__item-value">2.8%</span>
+              </div>
+              <div class="treemap__item treemap__item--other" data-job="other"
+                   style="flex: 0 0 10%; height: 80px;">
+                <span class="treemap__item-name">Kita</span>
+                <span class="treemap__item-value">7.0%</span>
+              </div>
+            </div>
+            <p class="treemap-note">Procentai rodo Claude.ai pokalbių dalį, susietą su kiekviena užduočių kategorija. Kategorijos pagal O*NET-SOC kodavimą. Procentai nesudaro 100%, nes taikomi privatumo filtrai.</p>
+          </div>
+          <div class="job-detail" id="job-detail">
+            <h3 class="job-detail__title" id="job-detail-title">Kompiuteriai ir matematika</h3>
+            <div class="job-detail__pct" id="job-detail-pct">37.2%</div>
+            <p class="job-detail__desc" id="job-detail-desc">
+              Didžiausia AI naudojimo kategorija. Apima programinės įrangos kūrimą, derinimą, duomenų mokslą, tinklų administravimą ir matematinę analizę.
+            </p>
+            <h4 style="font-family:var(--font-heading); font-size:14px; font-weight:600; margin-bottom:12px;">Populiariausios užduotys:</h4>
+            <ul class="job-tasks-list" id="job-detail-tasks">
+              <li>
+                <span class="task-text">Programinės įrangos modifikavimas ir klaidų taisymas</span>
+                <span class="task-pct">4.79%</span>
+              </li>
+              <li>
+                <span class="task-text">Klaidų tikrinimas ir derinimas</span>
+                <span class="task-pct">3.00%</span>
+              </li>
+              <li>
+                <span class="task-text">Sistemos administravimas ir trikčių šalinimas</span>
+                <span class="task-pct">1.81%</span>
+              </li>
+              <li>
+                <span class="task-text">Naujų programų kūrimas pagal reikalavimus</span>
+                <span class="task-pct">1.46%</span>
+              </li>
+              <li>
+                <span class="task-text">Svetainių projektavimas ir kūrimas</span>
+                <span class="task-pct">1.19%</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== TAB 3: Augmentation vs Automation ==================== -->
+      <div class="tab-panel" id="tab-augauto">
+        <div class="aug-section">
+          <div class="aug-bar">
+            <div class="aug-bar__visual">
+              <div class="aug-bar__seg aug-bar__seg--aug" style="flex: 57;">
+                <span class="aug-bar__seg-label">Augmentacija</span>
+                <span class="aug-bar__seg-value">57%</span>
+              </div>
+              <div class="aug-bar__seg aug-bar__seg--auto" style="flex: 43;">
+                <span class="aug-bar__seg-label">Automatizacija</span>
+                <span class="aug-bar__seg-value">43%</span>
+              </div>
+            </div>
+            <div class="aug-bar__sublabel">
+              <span>AI bendradarbiauja su žmogumi</span>
+              <span>AI atlieka užduotį savarankiškai</span>
+            </div>
+          </div>
+
+          <div class="interaction-modes">
+            <h3 class="interaction-modes__title">Sąveikos būdai</h3>
+            <div class="mode-bars">
+              <div class="mode-bar">
+                <span class="mode-bar__label">Užduočių iteracija</span>
+                <div class="mode-bar__track">
+                  <div class="mode-bar__fill mode-bar__fill--aug" style="width: 76%"></div>
+                </div>
+                <span class="mode-bar__value">25.5%</span>
+              </div>
+              <div class="mode-bar">
+                <span class="mode-bar__label">Direktyvinis</span>
+                <div class="mode-bar__track">
+                  <div class="mode-bar__fill mode-bar__fill--auto" style="width: 67%"></div>
+                </div>
+                <span class="mode-bar__value">22.6%</span>
+              </div>
+              <div class="mode-bar">
+                <span class="mode-bar__label">Mokymasis</span>
+                <div class="mode-bar__track">
+                  <div class="mode-bar__fill mode-bar__fill--aug" style="width: 56%"></div>
+                </div>
+                <span class="mode-bar__value">18.9%</span>
+              </div>
+              <div class="mode-bar">
+                <span class="mode-bar__label">Grįžtamasis ryšys</span>
+                <div class="mode-bar__track">
+                  <div class="mode-bar__fill mode-bar__fill--aug" style="width: 36%"></div>
+                </div>
+                <span class="mode-bar__value">12.0%</span>
+              </div>
+              <div class="mode-bar">
+                <span class="mode-bar__label">Nenustatyta</span>
+                <div class="mode-bar__track">
+                  <div class="mode-bar__fill mode-bar__fill--neutral" style="width: 9%"></div>
+                </div>
+                <span class="mode-bar__value">2.9%</span>
+              </div>
+              <div class="mode-bar">
+                <span class="mode-bar__label">Validacija</span>
+                <div class="mode-bar__track">
+                  <div class="mode-bar__fill mode-bar__fill--aug" style="width: 7%"></div>
+                </div>
+                <span class="mode-bar__value">2.3%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="aug-cards">
+            <div class="aug-card aug-card--aug">
+              <div class="aug-card__icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2" stroke="#3a9e8b" stroke-width="1.5" stroke-linecap="round"/><circle cx="9" cy="7" r="4" stroke="#3a9e8b" stroke-width="1.5"/><path d="M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#3a9e8b" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <h3 class="aug-card__title">Augmentacija (57%)</h3>
+              <p class="aug-card__text">AI bendradarbiauja su žmogumi — padeda generuoti idėjas, tobulinti tekstus, analizuoti duomenis. Žmogus priima galutinius sprendimus ir kontroliuoja procesą.</p>
+              <ul class="aug-card__list">
+                <li>Kodo peržiūra ir patobulinimas</li>
+                <li>Teksto redagavimas ir stilistika</li>
+                <li>Duomenų analizė ir vizualizacija</li>
+                <li>Mokymasis ir tyrinėjimas</li>
+                <li>Strateginis planavimas</li>
+              </ul>
+            </div>
+            <div class="aug-card aug-card--auto">
+              <div class="aug-card__icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="#d97757" stroke-width="1.5"/><path d="M9 9l6 6M15 9l-6 6" stroke="#d97757" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <h3 class="aug-card__title">Automatizacija (43%)</h3>
+              <p class="aug-card__text">AI tiesiogiai atlieka užduotį — generuoja kodą, konvertuoja formatus, kuria šabloninį turinį. Žmogaus indėlis minimalus, AI dirba savarankiškai.</p>
+              <ul class="aug-card__list">
+                <li>Šabloninio kodo generavimas</li>
+                <li>Formatų konvertavimas</li>
+                <li>Standartinių ataskaitų kūrimas</li>
+                <li>Duomenų perkėlimas ir transformacija</li>
+                <li>Dokumentų šablonų pildymas</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="aug-insight">
+            <h3 class="aug-insight__title">Daugiau naudojimo = daugiau augmentacijos</h3>
+            <p class="aug-insight__text">
+              Anthropic tyrimai rodo, kad šalyse su didesniu AI naudojimo indeksu, didesnė dalis naudojimo yra augmentacinė. Tai reiškia, kad įmonės, kurios daugiau naudoja AI, daro tai bendradarbiaudamos — AI padeda specialistams dirbti efektyviau, o ne pakeičia juos. Pradedantys naudotojai dažniau deleguoja visą užduotį, tuo tarpu patyrę — dirba kartu su AI iteraciškai.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="data-source">
+        Duomenys: <a href="https://www.anthropic.com/economic-index" target="_blank" rel="noopener">Anthropic Economic Index</a> &middot;
+        <a href="https://huggingface.co/datasets/Anthropic/EconomicIndex" target="_blank" rel="noopener">Duomenų rinkinys (HuggingFace)</a> &middot;
+        O*NET, JAV Darbo statistikos biuras (BLS, 2023)
+      </div>
+    </div>
+  </section>
+
+  <!-- What This Means -->
+  <section class="insights-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">Ką tai reiškia jūsų verslui</h2>
+        <p class="section-subtitle">Duomenys rodo aiškų kelią — pradėkite nuo ten, kur AI jau duoda rezultatus.</p>
+      </div>
+      <div class="insights-grid">
+        <div class="insight-card reveal">
+          <div class="insight-card__number">01</div>
+          <h3 class="insight-card__title">Lietuva — tarp AI lyderių</h3>
+          <p class="insight-card__text">
+            Su naudojimo indeksu 2.09x Lietuva lenkia daugelį didesnių Europos ekonomikų. Tai rodo, kad mūsų rinkoje jau yra pakankamai kompetencijos ir poreikio AI sprendimams.
+          </p>
+        </div>
+        <div class="insight-card reveal">
+          <div class="insight-card__number">02</div>
+          <h3 class="insight-card__title">AI — pagalbininkas, ne pakaitalas</h3>
+          <p class="insight-card__text">
+            57% AI naudojimo atvejų yra augmentacija. Jūsų komanda dirbs greičiau ir efektyviau, bet žmonės išlieka procese. Geriausias rezultatas — kai AI ir žmogus dirba kartu.
+          </p>
+        </div>
+        <div class="insight-card reveal">
+          <div class="insight-card__number">03</div>
+          <h3 class="insight-card__title">Ne tik IT — AI plinta visur</h3>
+          <p class="insight-card__text">
+            Nors programuotojai naudoja AI daugiausiai, švietimas (12%), kūrybinės industrijos (10.3%) ir valdymas (7.8%) rodo, kad AI aktualus visiems sektoriams.
+          </p>
+        </div>
+        <div class="insight-card reveal">
+          <div class="insight-card__number">04</div>
+          <h3 class="insight-card__title">80% laiko sutaupymas — realus</h3>
+          <p class="insight-card__text">
+            Vidutiniškai AI sumažina užduoties atlikimo laiką 80%. Mūsų klientų patirtis tai patvirtina — nuo 4 val. iki 45 min., nuo 2 dienų iki 15 min.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="kontaktai">
+    <div class="container container--narrow">
+      <div class="cta__content reveal">
+        <h2 class="cta__title">Norite sužinoti, kur AI duotų naudą jūsų komandai?</h2>
+        <p class="cta__text">
+          Nemokamos konsultacijos metu išanalizuosime jūsų procesus ir parodysime, kur automatizacija duotų didžiausią efektą.
+        </p>
+        <a href="mailto:info@nclaude.lt" class="btn btn--white btn--lg">Rezervuoti nemokamą konsultaciją</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo">
+            <img class="footer__logo-img" src="assets/logo.png" alt="nclaude" width="28" height="28">
+            <span>nclaude</span>
+          </a>
+          <p class="footer__tagline">Automatizacija, kuri veikia.</p>
+        </div>
+        <div class="footer__columns">
+          <div class="footer__column">
+            <h4 class="footer__heading">Paslaugos</h4>
+            <ul class="footer__list">
+              <li><a href="index.html#paslaugos">Procesų automatizavimas</a></li>
+              <li><a href="index.html#paslaugos">Vidiniai įrankiai</a></li>
+              <li><a href="index.html#paslaugos">AI integracija</a></li>
+              <li><a href="index.html#paslaugos">Konsultacijos</a></li>
+            </ul>
+          </div>
+          <div class="footer__column">
+            <h4 class="footer__heading">Įmonė</h4>
+            <ul class="footer__list">
+              <li><a href="index.html#apie">Apie mus</a></li>
+              <li><a href="index.html#procesas">Procesas</a></li>
+              <li><a href="index.html#rezultatai">Rezultatai</a></li>
+              <li><a href="tyrimai.html">Tyrimai</a></li>
+            </ul>
+          </div>
+          <div class="footer__column">
+            <h4 class="footer__heading">Kontaktai</h4>
+            <ul class="footer__list">
+              <li><a href="mailto:info@nclaude.lt">info@nclaude.lt</a></li>
+              <li><a href="tel:+37060000000">+370 600 00000</a></li>
+              <li>Vilnius, Lietuva</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 nclaude. Visos teisės saugomos.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/tyrimai.js"></script>
+</body>
+</html>
