@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pragma — Automatizacija, kuri veikia</title>
+  <meta name="description" content="Padedame įmonėms automatizuoti procesus, kurti vidinius įrankius ir sutelkti komandos dėmesį į darbą, kuris tikrai svarbus.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="#" class="nav__logo">
+        <svg class="nav__logo-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="28" height="28" rx="6" fill="currentColor"/>
+          <path d="M7 14L12 9L17 14L12 19Z" fill="#faf9f5"/>
+          <path d="M13 10L18 5L23 10L18 15Z" fill="#faf9f5" opacity="0.55"/>
+        </svg>
+        <span>Pragma</span>
+      </a>
+      <div class="nav__links" id="nav-links">
+        <a href="#paslaugos" class="nav__link">Paslaugos</a>
+        <a href="#procesas" class="nav__link">Procesas</a>
+        <a href="#rezultatai" class="nav__link">Rezultatai</a>
+        <a href="#apie" class="nav__link">Apie mus</a>
+      </div>
+      <a href="#kontaktai" class="nav__cta btn btn--primary btn--sm">Susisiekite</a>
+      <button class="nav__hamburger" id="nav-hamburger" aria-label="Atidaryti meniu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu__content">
+      <a href="#paslaugos" class="mobile-menu__link">Paslaugos</a>
+      <a href="#procesas" class="mobile-menu__link">Procesas</a>
+      <a href="#rezultatai" class="mobile-menu__link">Rezultatai</a>
+      <a href="#apie" class="mobile-menu__link">Apie mus</a>
+      <a href="#kontaktai" class="btn btn--primary btn--lg">Susisiekite</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero__bg">
+      <div class="hero__gradient"></div>
+    </div>
+    <div class="container">
+      <div class="hero__content reveal">
+        <h1 class="hero__title">
+          Technologijos turėtų dirbti jūsų komandai.
+          <span class="hero__title-accent">Ne atvirkščiai.</span>
+        </h1>
+        <p class="hero__text">
+          Išsiaiškiname, kas lėtina jūsų komandą, sukuriame sprendimą ir padedame jį įdiegti. Kai baigiame – tai tiesiog tampa dalimi kasdienio darbo.
+        </p>
+        <div class="hero__actions">
+          <a href="#kontaktai" class="btn btn--primary btn--lg">Susisiekite su mumis</a>
+          <a href="#procesas" class="btn btn--ghost btn--lg">Kaip tai veikia
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clients -->
+  <section class="clients">
+    <div class="container">
+      <p class="clients__label reveal">Mūsų klientai</p>
+      <div class="clients__grid reveal">
+        <div class="clients__logo">
+          <div class="clients__logo-placeholder">Įmonė A</div>
+        </div>
+        <div class="clients__logo">
+          <div class="clients__logo-placeholder">Įmonė B</div>
+        </div>
+        <div class="clients__logo">
+          <div class="clients__logo-placeholder">Įmonė C</div>
+        </div>
+        <div class="clients__logo">
+          <div class="clients__logo-placeholder">Įmonė D</div>
+        </div>
+        <div class="clients__logo">
+          <div class="clients__logo-placeholder">Įmonė E</div>
+        </div>
+        <div class="clients__logo">
+          <div class="clients__logo-placeholder">Įmonė F</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Statement -->
+  <section class="problem">
+    <div class="container container--narrow">
+      <div class="problem__content reveal">
+        <p class="problem__lead">
+          Kiekvienoje įmonėje yra darbų, kuriuos žmonės atlieka tik todėl, kad <em>„visada taip darėme"</em>.
+        </p>
+        <p class="problem__text">
+          Dokumentų pildymas rankomis. Duomenų kopijavimas iš vienos sistemos į kitą. Informacijos paieška po dešimt aplankų. Ataskaitų kūrimas nuo nulio kas mėnesį. Tie patys veiksmai, kiekvieną dieną.
+        </p>
+        <p class="problem__text">
+          Jūsų specialistai buvo samdyti ne tam. Mes padedame jiems grįžti prie tikrojo darbo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services" id="paslaugos">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">Ką mes darome</h2>
+        <p class="section-subtitle">Kiekvienas projektas prasideda nuo problemos supratimo ir baigiasi veikiančiu sprendimu, kuris tampa kasdienio darbo dalimi.</p>
+      </div>
+      <div class="services__grid">
+        <div class="card reveal">
+          <div class="card__icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 4C9.373 4 4 9.373 4 16s5.373 12 12 12 12-5.373 12-12S22.627 4 16 4z" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M12 16l3 3 5-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="card__title">Procesų automatizavimas</h3>
+          <p class="card__text">
+            Pasikartojantys darbai, kurie kasdien atima valandas – dokumentų generavimas, duomenų perkėlimas, ataskaitų ruošimas – gali vykti be žmogaus įsikišimo. Mes randame tuos procesus ir padarome, kad jie vyktų patys.
+          </p>
+        </div>
+        <div class="card reveal">
+          <div class="card__icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="4" width="24" height="24" rx="4" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M10 16h12M16 10v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="card__title">Vidiniai įrankiai</h3>
+          <p class="card__text">
+            Ne kiekviena problema turi gatavą sprendimą rinkoje. Kuriame programinę įrangą, pritaikytą būtent jūsų komandos darbo eigai – kad įrankis tarnautų žmonėms, o ne atvirkščiai.
+          </p>
+        </div>
+        <div class="card reveal">
+          <div class="card__icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M8 26c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M22 10l4-4M26 6l-2 6-4-4 6-2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="card__title">AI integracija</h3>
+          <p class="card__text">
+            Dirbtinis intelektas gali padėti jūsų komandai – bet tik tada, kai pritaikytas tinkamai. Integruojame AI ten, kur jis duoda realią naudą, ne tik gražiai skamba pristatymuose.
+          </p>
+        </div>
+        <div class="card reveal">
+          <div class="card__icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 8h20M6 16h20M6 24h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="24" cy="24" r="4" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M24 22v4M22 24h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="card__title">Konsultacijos ir auditas</h3>
+          <p class="card__text">
+            Kartais reikia ne iš karto sprendimo, o aiškumo. Išanalizuojame jūsų procesus, randame kur slypi didžiausias potencialas, ir pateikiame konkretų veiksmų planą su prioritetais.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Image -->
+  <section class="featured">
+    <div class="container">
+      <div class="featured__image reveal">
+        <div class="featured__placeholder">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="8" width="40" height="32" rx="4" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M4 32l12-10 8 6 10-8 10 8" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <circle cx="32" cy="18" r="3" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          <span>Iliustracija: komandos darbo automatizavimas</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="process" id="procesas">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">Mūsų dienos susideda iš trijų dalykų</h2>
+        <p class="section-subtitle">Nuo pirmo pokalbio iki veikiančio sprendimo – aiškus ir skaidrus procesas.</p>
+      </div>
+      <div class="process__steps">
+        <div class="process__step reveal">
+          <div class="process__number">1</div>
+          <h3 class="process__step-title">Identifikuojame</h3>
+          <p class="process__step-text">
+            Kiekvienas projektas prasideda nuo aiškumo. Išsiaiškiname, kaip iš tikrųjų dirba jūsų komanda – kur prarandamas laikas, kas lėtina darbą, kodėl užduotys kaupiasi. Tada randame tuos 5% galimybių, kurias verta realizuoti.
+          </p>
+        </div>
+        <div class="process__step reveal">
+          <div class="process__number">2</div>
+          <h3 class="process__step-title">Kuriame</h3>
+          <p class="process__step-text">
+            Kai žinome, kas svarbu – greitai imamės darbo. Mūsų komanda suplanuoja ir sukuria sprendimus, kurie sklandžiai integruojasi į jūsų esamas sistemas. Padaryta teisingai, kad veiktų nuo pirmos dienos.
+          </p>
+        </div>
+        <div class="process__step reveal">
+          <div class="process__number">3</div>
+          <h3 class="process__step-title">Įdiegiame</h3>
+          <p class="process__step-text">
+            Tada padarome, kad tai veiktų realybėje. Dirbame kartu su jūsų komanda – apmokome, detaliai derinome ir padedame integruoti naujus sprendimus į kasdienį darbą. Kai pasitraukiame – tai jau ne projektas, o tiesiog taip dabar dirbama.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="results" id="rezultatai">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">Keli pavyzdžiai iš praktikos</h2>
+        <p class="section-subtitle">Kiekviena įmonė skirtinga, bet rezultatai kalba patys už save.</p>
+      </div>
+      <div class="results__grid">
+        <div class="result-card reveal">
+          <div class="result-card__image">
+            <div class="result-card__placeholder">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="4" y="8" width="32" height="24" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M12 20h16M12 25h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+          </div>
+          <div class="result-card__content">
+            <span class="result-card__label">Gamybinė įmonė</span>
+            <div class="result-card__metric">4 val → 45 min</div>
+            <p class="result-card__text">
+              Komercinio pasiūlymo paruošimo laikas sutrumpėjo beveik 5 kartus. Komanda per dieną paruošia dvigubai daugiau pasiūlymų nei anksčiau.
+            </p>
+          </div>
+        </div>
+        <div class="result-card reveal">
+          <div class="result-card__image">
+            <div class="result-card__placeholder">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M10 8h20v24H10z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M15 14h10M15 19h10M15 24h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+          </div>
+          <div class="result-card__content">
+            <span class="result-card__label">Finansinių paslaugų įmonė</span>
+            <div class="result-card__metric">2 dienos → 15 min</div>
+            <p class="result-card__text">
+              Mėnesinių ataskaitų generavimas, kuris anksčiau trukdavo dvi darbo dienas, dabar atliekamas automatiškai ir be klaidų.
+            </p>
+          </div>
+        </div>
+        <div class="result-card reveal">
+          <div class="result-card__image">
+            <div class="result-card__placeholder">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="12" stroke="currentColor" stroke-width="1.5"/><path d="M20 12v8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+          <div class="result-card__content">
+            <span class="result-card__label">Inžinerinė įmonė</span>
+            <div class="result-card__metric">20 val / savaitę</div>
+            <p class="result-card__text">
+              Tiek laiko komanda sutaupo kiekvieną savaitę naudodama vidinį skaičiavimų įrankį, sukurtą pagal jų konkrečią darbo eigą.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Us -->
+  <section class="why" id="apie">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">Kuo mes skiriamės</h2>
+      </div>
+      <div class="why__grid">
+        <div class="why__item reveal">
+          <div class="why__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="why__title">Pirma suprantame darbą, tada siūlome sprendimą</h3>
+          <p class="why__text">
+            Pradedame nuo to, kaip jūsų komanda realiai dirba, tada sugalvojame, ką galima pakeisti. Neparduodame vienos technologijos ar platformos – parenkame tai, kas tinka būtent jums.
+          </p>
+        </div>
+        <div class="why__item reveal">
+          <div class="why__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="why__title">Netrikdome jūsų komandos darbo</h3>
+          <p class="why__text">
+            Žinome, kad mus pasamdėte tam, kad palengvintumėte komandos naštą. Todėl jūsų žmonių įtraukiame tik tiek, kiek reikia – likusį darbą padarome mes.
+          </p>
+        </div>
+        <div class="why__item reveal">
+          <div class="why__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 4L12 14.01l-3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="why__title">Dirbame iki realaus rezultato</h3>
+          <p class="why__text">
+            Mūsų darbas nesibaigia pristatymu ar ataskaita. Liekame tol, kol sprendimas veikia kasdienėje realybėje ir jūsų komanda juo naudojasi.
+          </p>
+        </div>
+        <div class="why__item reveal">
+          <div class="why__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 14h6v6H4zM14 4h6v6h-6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M7 14V7h7M17 10v7h-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="why__title">Dirbame su tuo, ką turite</h3>
+          <p class="why__text">
+            Nereikia tobulų duomenų ar didelės IT komandos. Kuriame sprendimus aplink jūsų esamas sistemas ir prisiimame techninę dalį, kad jūsų komanda galėtų daryti savo darbą.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="duk">
+    <div class="container">
+      <h2 class="section-title reveal">Dažnai užduodami klausimai</h2>
+      <div class="faq__list reveal">
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            Mūsų duomenys neidealioje būklėje, o IT komanda maža. Ar tai problema?
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              Dauguma įmonių, su kuriomis dirbame, yra būtent tokioje situacijoje. Mums nereikia tobulų duomenų ar didelės techninės komandos. Kuriame sprendimus aplink jūsų esamas sistemas ir prisiimame visą techninį darbą, kad jūsų žmonės galėtų susikoncentruoti į savo tiesioginį darbą.
+            </div>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            Kiek laiko tai pareikalaus iš mūsų komandos?
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              Minimaliai. Jūsų komandos įtraukimas yra tikslinis ir efektyvus – tik tiek, kad suprastume kaip vyksta darbas, o likusią dalį padarome mes. Būtent dėl to jus ir samdote – kad nuimtumėte naštą nuo savo žmonių.
+            </div>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            Jau bandėme diegti automatizaciją ir neveikė. Kuo čia kitaip?
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              Dauguma bandymų nepavyksta dėl dviejų priežasčių: arba pradedama nuo netinkamų procesų, arba sustojama ties prototipu. Mes koncentruojamės tik į tai, ką verta automatizuoti, ir liekame iki pat įdiegimo – kol komanda realiai naudojasi sprendimu kasdien.
+            </div>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            Koks tipinis projekto trukmė?
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              Priklauso nuo apimties. Kai kurie automatizavimai veikia per kelias savaites, didesni projektai – per porą mėnesių. Pirmas pokalbis nieko neįpareigoja ir padeda suprasti, ko galima tikėtis.
+            </div>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            Ar dirbate tik su tam tikromis industrijomis?
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-inner">
+              Ne. Mūsų stiprybė – darbo eigų supratimas, o ne vienos konkrečios industrijos žinios. Dirbame su gamybos, inžinerijos, finansų, paslaugų ir kitų sričių įmonėmis. Jei jūsų komandoje yra procesų, kurie kartojasi ir atima laiką – galime padėti.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="kontaktai">
+    <div class="container container--narrow">
+      <div class="cta__content reveal">
+        <h2 class="cta__title">Papasakokite, kas atima jūsų komandos laiką</h2>
+        <p class="cta__text">
+          Trumpas pokalbis – ir turėsite aiškų vaizdą, ką galima automatizuoti ar pagerinti. Be įsipareigojimų.
+        </p>
+        <a href="mailto:info@pragma.lt" class="btn btn--white btn--lg">Rezervuoti nemokamą konsultaciją</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="#" class="footer__logo">
+            <svg class="footer__logo-icon" width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="28" height="28" rx="6" fill="currentColor"/>
+              <path d="M7 14L12 9L17 14L12 19Z" fill="#141413"/>
+              <path d="M13 10L18 5L23 10L18 15Z" fill="#141413" opacity="0.55"/>
+            </svg>
+            <span>Pragma</span>
+          </a>
+          <p class="footer__tagline">Automatizacija, kuri veikia.</p>
+        </div>
+        <div class="footer__columns">
+          <div class="footer__column">
+            <h4 class="footer__heading">Paslaugos</h4>
+            <ul class="footer__list">
+              <li><a href="#paslaugos">Procesų automatizavimas</a></li>
+              <li><a href="#paslaugos">Vidiniai įrankiai</a></li>
+              <li><a href="#paslaugos">AI integracija</a></li>
+              <li><a href="#paslaugos">Konsultacijos</a></li>
+            </ul>
+          </div>
+          <div class="footer__column">
+            <h4 class="footer__heading">Įmonė</h4>
+            <ul class="footer__list">
+              <li><a href="#apie">Apie mus</a></li>
+              <li><a href="#procesas">Procesas</a></li>
+              <li><a href="#rezultatai">Rezultatai</a></li>
+              <li><a href="#kontaktai">Kontaktai</a></li>
+            </ul>
+          </div>
+          <div class="footer__column">
+            <h4 class="footer__heading">Kontaktai</h4>
+            <ul class="footer__list">
+              <li><a href="mailto:info@pragma.lt">info@pragma.lt</a></li>
+              <li><a href="tel:+37060000000">+370 600 00000</a></li>
+              <li>Vilnius, Lietuva</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Pragma. Visos teisės saugomos.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
