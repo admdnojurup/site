@@ -1,15 +1,18 @@
 /* ========================================
-   Tyrimai Page — Interactive Features
-   Tabs, Country Map, Job Explorer
+   Tyrimai Page — Interactive Map Explorer
+   SVG Map, Filters, Rankings, Detail Panel
    ======================================== */
 
 (function () {
   'use strict';
 
-  // --- European Country Data ---
+  // ============================================================
+  //  DATA
+  // ============================================================
+
   var countries = {
     IS: {
-      name: 'Islandija', rank: '5 / 116', aui: 3.50, obs: 280,
+      name: 'Islandija', rank: '5 / 116', aui: 3.50, aug: 68,
       tasks: [
         ['Kodo derinimas ir refaktoringas', '5.8%'],
         ['Mokslinių tekstų redagavimas', '4.2%'],
@@ -17,7 +20,7 @@
       ]
     },
     CH: {
-      name: 'Šveicarija', rank: '9 / 116', aui: 3.10, obs: 4200,
+      name: 'Šveicarija', rank: '9 / 116', aui: 3.10, aug: 65,
       tasks: [
         ['Programinės įrangos kūrimas ir derinimas', '5.5%'],
         ['Finansinių duomenų analizė', '4.1%'],
@@ -25,7 +28,7 @@
       ]
     },
     IE: {
-      name: 'Airija', rank: '10 / 116', aui: 2.90, obs: 2100,
+      name: 'Airija', rank: '10 / 116', aui: 2.90, aug: 64,
       tasks: [
         ['Programinės įrangos modifikavimas', '6.1%'],
         ['Turinio kūrimas ir redagavimas', '4.3%'],
@@ -33,7 +36,7 @@
       ]
     },
     NL: {
-      name: 'Nyderlandai', rank: '11 / 116', aui: 2.80, obs: 7500,
+      name: 'Nyderlandai', rank: '11 / 116', aui: 2.80, aug: 63,
       tasks: [
         ['Kodo derinimas ir taisymas', '5.6%'],
         ['Duomenų mokslas ir analizė', '4.0%'],
@@ -41,7 +44,7 @@
       ]
     },
     UK: {
-      name: 'Jungtinė Karalystė', rank: '12 / 116', aui: 2.67, obs: 32000,
+      name: 'Jungtinė Karalystė', rank: '12 / 116', aui: 2.67, aug: 63,
       tasks: [
         ['Programinės įrangos kūrimas ir derinimas', '5.9%'],
         ['Turinio kūrimas ir redagavimas', '4.5%'],
@@ -49,7 +52,7 @@
       ]
     },
     NO: {
-      name: 'Norvegija', rank: '14 / 116', aui: 2.60, obs: 2800,
+      name: 'Norvegija', rank: '14 / 116', aui: 2.60, aug: 62,
       tasks: [
         ['Kodo derinimas ir refaktoringas', '5.4%'],
         ['Duomenų analizė', '3.9%'],
@@ -57,7 +60,7 @@
       ]
     },
     SE: {
-      name: 'Švedija', rank: '16 / 116', aui: 2.50, obs: 4500,
+      name: 'Švedija', rank: '16 / 116', aui: 2.50, aug: 61,
       tasks: [
         ['Programinės įrangos kūrimas', '5.7%'],
         ['Svetainių ir aplikacijų kūrimas', '4.1%'],
@@ -65,7 +68,7 @@
       ]
     },
     FI: {
-      name: 'Suomija', rank: '18 / 116', aui: 2.35, obs: 2200,
+      name: 'Suomija', rank: '18 / 116', aui: 2.35, aug: 60,
       tasks: [
         ['Kodo derinimas ir taisymas', '5.3%'],
         ['Mokslinė analizė ir tyrimai', '3.8%'],
@@ -73,7 +76,7 @@
       ]
     },
     EE: {
-      name: 'Estija', rank: '19 / 116', aui: 2.30, obs: 620,
+      name: 'Estija', rank: '19 / 116', aui: 2.30, aug: 60,
       tasks: [
         ['Programinės įrangos kūrimas', '6.5%'],
         ['Svetainių kūrimas ir dizainas', '4.4%'],
@@ -81,7 +84,7 @@
       ]
     },
     DE: {
-      name: 'Vokietija', rank: '17 / 116', aui: 2.30, obs: 28000,
+      name: 'Vokietija', rank: '17 / 116', aui: 2.30, aug: 60,
       tasks: [
         ['Programinės įrangos modifikavimas', '5.2%'],
         ['Techninė dokumentacija', '3.8%'],
@@ -89,7 +92,7 @@
       ]
     },
     BE: {
-      name: 'Belgija', rank: '20 / 116', aui: 2.20, obs: 4100,
+      name: 'Belgija', rank: '20 / 116', aui: 2.20, aug: 59,
       tasks: [
         ['Kodo derinimas ir taisymas', '5.0%'],
         ['Dokumentų redagavimas', '3.7%'],
@@ -97,7 +100,7 @@
       ]
     },
     FR: {
-      name: 'Prancūzija', rank: '19 / 116', aui: 2.20, obs: 22000,
+      name: 'Prancūzija', rank: '19 / 116', aui: 2.20, aug: 59,
       tasks: [
         ['Programinės įrangos kūrimas', '5.1%'],
         ['Turinio kūrimas ir redagavimas', '4.2%'],
@@ -105,7 +108,7 @@
       ]
     },
     DK: {
-      name: 'Danija', rank: '22 / 116', aui: 2.10, obs: 2400,
+      name: 'Danija', rank: '22 / 116', aui: 2.10, aug: 59,
       tasks: [
         ['Kodo derinimas ir refaktoringas', '5.5%'],
         ['Svetainių kūrimas', '3.8%'],
@@ -113,7 +116,7 @@
       ]
     },
     LT: {
-      name: 'Lietuva', rank: '23 / 116', aui: 2.09, obs: 1060,
+      name: 'Lietuva', rank: '23 / 116', aui: 2.09, aug: 59,
       tasks: [
         ['Kodo derinimas, taisymas ir refaktoringas', '6.3%'],
         ['Produktų paieška ir palyginimas', '4.6%'],
@@ -121,7 +124,7 @@
       ]
     },
     AT: {
-      name: 'Austrija', rank: '25 / 116', aui: 2.00, obs: 3200,
+      name: 'Austrija', rank: '25 / 116', aui: 2.00, aug: 58,
       tasks: [
         ['Programinės įrangos kūrimas', '5.0%'],
         ['Duomenų analizė', '3.6%'],
@@ -129,7 +132,7 @@
       ]
     },
     LV: {
-      name: 'Latvija', rank: '30 / 116', aui: 1.80, obs: 540,
+      name: 'Latvija', rank: '30 / 116', aui: 1.80, aug: 57,
       tasks: [
         ['Kodo derinimas ir taisymas', '5.8%'],
         ['Svetainių kūrimas', '4.0%'],
@@ -137,7 +140,7 @@
       ]
     },
     SI: {
-      name: 'Slovėnija', rank: '34 / 116', aui: 1.70, obs: 620,
+      name: 'Slovėnija', rank: '34 / 116', aui: 1.70, aug: 56,
       tasks: [
         ['Programinės įrangos kūrimas', '5.2%'],
         ['Duomenų analizė', '3.5%'],
@@ -145,7 +148,7 @@
       ]
     },
     CZ: {
-      name: 'Čekija', rank: '38 / 116', aui: 1.60, obs: 2800,
+      name: 'Čekija', rank: '38 / 116', aui: 1.60, aug: 56,
       tasks: [
         ['Kodo derinimas ir taisymas', '5.4%'],
         ['Svetainių kūrimas', '3.8%'],
@@ -153,7 +156,7 @@
       ]
     },
     PT: {
-      name: 'Portugalija', rank: '42 / 116', aui: 1.50, obs: 2400,
+      name: 'Portugalija', rank: '42 / 116', aui: 1.50, aug: 55,
       tasks: [
         ['Programinės įrangos kūrimas', '5.0%'],
         ['Turinio kūrimas ir redagavimas', '3.8%'],
@@ -161,7 +164,7 @@
       ]
     },
     SK: {
-      name: 'Slovakija', rank: '44 / 116', aui: 1.45, obs: 1200,
+      name: 'Slovakija', rank: '44 / 116', aui: 1.45, aug: 55,
       tasks: [
         ['Kodo derinimas ir taisymas', '5.5%'],
         ['Svetainių kūrimas', '3.7%'],
@@ -169,7 +172,7 @@
       ]
     },
     ES: {
-      name: 'Ispanija', rank: '45 / 116', aui: 1.40, obs: 8500,
+      name: 'Ispanija', rank: '45 / 116', aui: 1.40, aug: 54,
       tasks: [
         ['Programinės įrangos kūrimas', '4.8%'],
         ['Turinio kūrimas ir redagavimas', '4.0%'],
@@ -177,7 +180,7 @@
       ]
     },
     IT: {
-      name: 'Italija', rank: '48 / 116', aui: 1.30, obs: 9200,
+      name: 'Italija', rank: '48 / 116', aui: 1.30, aug: 54,
       tasks: [
         ['Kodo derinimas ir taisymas', '4.6%'],
         ['Turinio kūrimas', '3.8%'],
@@ -185,7 +188,7 @@
       ]
     },
     PL: {
-      name: 'Lenkija', rank: '52 / 116', aui: 1.20, obs: 5800,
+      name: 'Lenkija', rank: '52 / 116', aui: 1.20, aug: 53,
       tasks: [
         ['Programinės įrangos kūrimas', '5.2%'],
         ['Svetainių kūrimas', '3.9%'],
@@ -193,15 +196,23 @@
       ]
     },
     HU: {
-      name: 'Vengrija', rank: '55 / 116', aui: 1.10, obs: 1400,
+      name: 'Vengrija', rank: '55 / 116', aui: 1.10, aug: 52,
       tasks: [
         ['Kodo derinimas ir taisymas', '5.3%'],
         ['Mokymasis ir tyrinėjimas', '4.0%'],
         ['Svetainių kūrimas', '3.4%']
       ]
     },
+    RS: {
+      name: 'Serbija', rank: '56 / 116', aui: 1.05, aug: 52,
+      tasks: [
+        ['Programinės įrangos kūrimas', '5.5%'],
+        ['Svetainių kūrimas', '4.0%'],
+        ['Mokymasis ir tyrinėjimas', '3.6%']
+      ]
+    },
     HR: {
-      name: 'Kroatija', rank: '58 / 116', aui: 1.00, obs: 450,
+      name: 'Kroatija', rank: '58 / 116', aui: 1.00, aug: 52,
       tasks: [
         ['Programinės įrangos kūrimas', '5.0%'],
         ['Mokymasis ir tyrinėjimas', '4.2%'],
@@ -209,23 +220,15 @@
       ]
     },
     GR: {
-      name: 'Graikija', rank: '60 / 116', aui: 1.00, obs: 1200,
+      name: 'Graikija', rank: '60 / 116', aui: 1.00, aug: 52,
       tasks: [
         ['Kodo derinimas ir taisymas', '4.8%'],
         ['Mokymasis ir studijos', '4.5%'],
         ['Turinio kūrimas', '3.2%']
       ]
     },
-    RS: {
-      name: 'Serbija', rank: '56 / 116', aui: 1.05, obs: 820,
-      tasks: [
-        ['Programinės įrangos kūrimas', '5.5%'],
-        ['Svetainių kūrimas', '4.0%'],
-        ['Mokymasis ir tyrinėjimas', '3.6%']
-      ]
-    },
     RO: {
-      name: 'Rumunija', rank: '65 / 116', aui: 0.80, obs: 1800,
+      name: 'Rumunija', rank: '65 / 116', aui: 0.80, aug: 50,
       tasks: [
         ['Programinės įrangos kūrimas', '5.6%'],
         ['Svetainių kūrimas', '4.2%'],
@@ -233,7 +236,7 @@
       ]
     },
     BG: {
-      name: 'Bulgarija', rank: '72 / 116', aui: 0.65, obs: 380,
+      name: 'Bulgarija', rank: '72 / 116', aui: 0.65, aug: 49,
       tasks: [
         ['Kodo derinimas ir taisymas', '5.4%'],
         ['Mokymasis ir tyrinėjimas', '4.5%'],
@@ -242,11 +245,9 @@
     }
   };
 
-  // --- Job Category Data ---
   var jobCategories = {
     computer: {
-      title: 'Kompiuteriai ir matematika',
-      pct: '37.2%',
+      title: 'Kompiuteriai ir matematika', pct: '37.2%',
       desc: 'Didžiausia AI naudojimo kategorija. Apima programinės įrangos kūrimą, derinimą, duomenų mokslą, tinklų administravimą ir matematinę analizę.',
       tasks: [
         ['Programinės įrangos modifikavimas ir klaidų taisymas', '4.79%'],
@@ -257,8 +258,7 @@
       ]
     },
     education: {
-      title: 'Švietimas ir bibliotekos',
-      pct: '12.0%',
+      title: 'Švietimas ir bibliotekos', pct: '12.0%',
       desc: 'Sparčiausiai auganti kategorija. AI naudojamas mokomosios medžiagos kūrimui, studentų konsultavimui, mokymosi pritaikymui ir akademiniam rašymui.',
       tasks: [
         ['Mokymo medžiagos pritaikymas skirtingiems lygiams', '0.13%'],
@@ -269,8 +269,7 @@
       ]
     },
     arts: {
-      title: 'Menas, dizainas, medija',
-      pct: '10.3%',
+      title: 'Menas, dizainas, medija', pct: '10.3%',
       desc: 'Antra pagal dydį kategorija. Apima teksto kūrimą ir redagavimą, turinio rašymą, kūrybinį dizainą ir medijos produkciją.',
       tasks: [
         ['Dokumentų redagavimas ir publikavimas', '1.41%'],
@@ -281,8 +280,7 @@
       ]
     },
     management: {
-      title: 'Valdymas',
-      pct: '7.8%',
+      title: 'Valdymas', pct: '7.8%',
       desc: 'Vadovai naudoja AI strateginiam planavimui, ataskaitų analizei, komunikacijai ir sprendimų priėmimui. Vidutinė automatizacijos tikimybė — tik 15.8%.',
       tasks: [
         ['Operacijų analizė ir efektyvumo vertinimas', '0.08%'],
@@ -293,8 +291,7 @@
       ]
     },
     business: {
-      title: 'Verslas ir finansai',
-      pct: '6.2%',
+      title: 'Verslas ir finansai', pct: '6.2%',
       desc: 'Finansinė analizė, apskaita, auditas, verslo konsultavimas ir rinkos tyrimai. Vidutinė automatizacijos tikimybė — 56.1%.',
       tasks: [
         ['Finansinių ataskaitų rengimas', '0.06%'],
@@ -305,8 +302,7 @@
       ]
     },
     science: {
-      title: 'Mokslas',
-      pct: '5.1%',
+      title: 'Mokslas', pct: '5.1%',
       desc: 'Moksliniai tyrimai, laboratorinė analizė, duomenų apdorojimas ir mokslinių publikacijų rengimas.',
       tasks: [
         ['Matematinė ir statistinė analizė', '0.20%'],
@@ -317,8 +313,7 @@
       ]
     },
     legal: {
-      title: 'Teisė',
-      pct: '4.5%',
+      title: 'Teisė', pct: '4.5%',
       desc: 'Teisinių dokumentų analizė, sutarčių peržiūra, teisės aktų interpretavimas ir teisinių konsultacijų rengimas.',
       tasks: [
         ['Teisinių dokumentų analizė ir peržiūra', '0.06%'],
@@ -329,8 +324,7 @@
       ]
     },
     office: {
-      title: 'Biuro administracija',
-      pct: '3.7%',
+      title: 'Biuro administracija', pct: '3.7%',
       desc: 'Administracinės užduotys, dokumentų tvarkymas, duomenų įvedimas ir biuro procesų valdymas. Aukščiausia automatizacijos tikimybė — 83.9%.',
       tasks: [
         ['Dokumentų ir sistemų prieigos valdymas', '0.03%'],
@@ -341,8 +335,7 @@
       ]
     },
     healthcare: {
-      title: 'Sveikatos apsauga',
-      pct: '3.4%',
+      title: 'Sveikatos apsauga', pct: '3.4%',
       desc: 'Medicininė dokumentacija, pacientų konsultavimas, sveikatos duomenų analizė. Žema automatizacijos tikimybė — 18.8%.',
       tasks: [
         ['Medicininės dokumentacijos tvarkymas', '0.04%'],
@@ -353,8 +346,7 @@
       ]
     },
     sales: {
-      title: 'Pardavimai',
-      pct: '2.8%',
+      title: 'Pardavimai', pct: '2.8%',
       desc: 'Pardavimų strategijos, klientų komunikacija, pasiūlymų rengimas ir rinkos analizė.',
       tasks: [
         ['Pardavimų scenarijų pritaikymas klientams', '0.03%'],
@@ -365,8 +357,7 @@
       ]
     },
     other: {
-      title: 'Kitos kategorijos',
-      pct: '7.0%',
+      title: 'Kitos kategorijos', pct: '7.0%',
       desc: 'Apima gamybą, transportą, statybą, žemės ūkį, asmenines paslaugas ir kitas sritis su mažesniu AI naudojimo lygiu.',
       tasks: [
         ['Gamybos procesų dokumentavimas', '0.02%'],
@@ -378,71 +369,300 @@
     }
   };
 
-  // --- Tab Switching ---
-  var tabButtons = document.querySelectorAll('.tabs-nav__item');
-  var tabPanels = document.querySelectorAll('.tab-panel');
+  // ============================================================
+  //  COLOR SCALES
+  // ============================================================
 
-  tabButtons.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var tabId = this.getAttribute('data-tab');
+  var usageScale = [
+    { min: 2.8, fill: '#1a7f6d', text: '#fff' },
+    { min: 2.2, fill: '#3a9e8b', text: '#fff' },
+    { min: 1.6, fill: '#5cb8a5', text: '#0a3d33' },
+    { min: 1.2, fill: '#8ad0c0', text: '#0a3d33' },
+    { min: 0.8, fill: '#b3e2d6', text: '#0a3d33' },
+    { min: 0,   fill: '#d6f0e8', text: '#3a6b5e' }
+  ];
 
-      tabButtons.forEach(function (b) {
-        b.classList.remove('active');
-        b.setAttribute('aria-selected', 'false');
-      });
-      tabPanels.forEach(function (p) {
-        p.classList.remove('active');
-      });
+  var augScale = [
+    { min: 64, fill: '#1a7f6d', text: '#fff' },
+    { min: 60, fill: '#3a9e8b', text: '#fff' },
+    { min: 57, fill: '#6bb5a3', text: '#0a3d33' },
+    { min: 54, fill: '#c4b896', text: '#3a3d1a' },
+    { min: 51, fill: '#d4a574', text: '#3a2a1a' },
+    { min: 0,  fill: '#d97757', text: '#fff' }
+  ];
 
-      this.classList.add('active');
-      this.setAttribute('aria-selected', 'true');
-      document.getElementById('tab-' + tabId).classList.add('active');
-    });
-  });
-
-  // --- Country Map Interaction ---
-  var tiles = document.querySelectorAll('.europe-tile');
-  var detailName = document.getElementById('detail-name');
-  var detailRank = document.getElementById('detail-rank');
-  var detailAui = document.getElementById('detail-aui');
-  var detailBar = document.getElementById('detail-bar');
-  var detailTasks = document.getElementById('detail-tasks');
-
-  function selectCountry(code) {
-    var data = countries[code];
-    if (!data) return;
-
-    tiles.forEach(function (t) { t.classList.remove('active'); });
-    var tile = document.querySelector('[data-country="' + code + '"]');
-    if (tile) tile.classList.add('active');
-
-    detailName.textContent = data.name;
-    detailRank.textContent = data.rank;
-    detailAui.textContent = data.aui.toFixed(2) + 'x';
-
-    // Bar width: scale AUI to percentage (max ~4.0 = 100%)
-    var barWidth = Math.min(data.aui / 4.0 * 100, 100);
-    detailBar.style.width = barWidth + '%';
-
-    // Tasks
-    var tasksHtml = '';
-    data.tasks.forEach(function (task, i) {
-      tasksHtml += '<div class="country-task">' +
-        '<span class="country-task__num">' + (i + 1) + '.</span>' +
-        '<span class="country-task__text">' + task[0] + '</span>' +
-        '<span class="country-task__pct">' + task[1] + '</span>' +
-        '</div>';
-    });
-    detailTasks.innerHTML = tasksHtml;
+  function getTier(value, scale) {
+    for (var i = 0; i < scale.length; i++) {
+      if (value >= scale[i].min) return scale[i];
+    }
+    return scale[scale.length - 1];
   }
 
-  tiles.forEach(function (tile) {
-    tile.addEventListener('click', function () {
-      selectCountry(this.getAttribute('data-country'));
-    });
-  });
+  // ============================================================
+  //  STATE
+  // ============================================================
 
-  // --- Job Explorer Interaction ---
+  var activeFilter = 'usage';
+  var activeCountry = 'LT';
+
+  // ============================================================
+  //  DOM REFERENCES
+  // ============================================================
+
+  var tiles = document.querySelectorAll('.geo-tile');
+  var filterBtns = document.querySelectorAll('.filter-btn');
+  var detailPanel = document.getElementById('explorer-detail');
+  var infoPanel = document.getElementById('explorer-info');
+  var rankingGrid = document.getElementById('ranking-grid');
+  var rankingTitle = document.getElementById('ranking-title');
+  var legendEl = document.getElementById('map-legend');
+  var contextAug = document.getElementById('context-augmentation');
+  var contextJobs = document.getElementById('context-jobs');
+
+  // ============================================================
+  //  UPDATE MAP COLORS
+  // ============================================================
+
+  function updateMapColors() {
+    tiles.forEach(function (tile) {
+      var code = tile.getAttribute('data-country');
+      var data = countries[code];
+      if (!data) return;
+
+      var rect = tile.querySelector('rect');
+      var text = tile.querySelector('text');
+      var tier;
+
+      if (activeFilter === 'augmentation') {
+        tier = getTier(data.aug, augScale);
+      } else {
+        tier = getTier(data.aui, usageScale);
+      }
+
+      rect.setAttribute('fill', tier.fill);
+      text.setAttribute('fill', tier.text);
+    });
+  }
+
+  // ============================================================
+  //  UPDATE DETAIL PANEL
+  // ============================================================
+
+  function updateDetail() {
+    var data = countries[activeCountry];
+    if (!data) return;
+
+    var html = '';
+
+    if (activeFilter === 'usage' || activeFilter === 'jobs') {
+      var barWidth = Math.min(data.aui / 4.0 * 100, 100);
+      html =
+        '<h2 class="detail__name">' + data.name + '</h2>' +
+        '<div class="detail__stats">' +
+          '<div class="detail__stat">' +
+            '<span class="detail__stat-value">' + data.rank + '</span>' +
+            '<span class="detail__stat-label">Naudojimo reitingas</span>' +
+          '</div>' +
+          '<div class="detail__stat">' +
+            '<span class="detail__stat-value">' + data.aui.toFixed(2) + 'x</span>' +
+            '<span class="detail__stat-label">Naudojimo indeksas</span>' +
+          '</div>' +
+        '</div>' +
+        '<div class="detail__bar">' +
+          '<div class="detail__bar-label">AI naudojimo indeksas (AUI)</div>' +
+          '<div class="detail__bar-track">' +
+            '<div class="detail__bar-fill" style="width:' + barWidth + '%"></div>' +
+            '<div class="detail__bar-marker"></div>' +
+          '</div>' +
+        '</div>' +
+        '<div class="detail__tasks">' +
+          '<h3 class="detail__tasks-title">Populiariausios užduotys</h3>';
+
+      data.tasks.forEach(function (task, i) {
+        html +=
+          '<div class="detail__task">' +
+            '<span class="detail__task-num">' + (i + 1) + '.</span>' +
+            '<span class="detail__task-text">' + task[0] + '</span>' +
+            '<span class="detail__task-pct">' + task[1] + '</span>' +
+          '</div>';
+      });
+      html += '</div>';
+
+    } else if (activeFilter === 'augmentation') {
+      var autoP = 100 - data.aug;
+      var note;
+      if (data.aug >= 60) {
+        note = 'Ši šalis rodo stiprų augmentacijos modelį — AI daugiau naudojamas kaip pagalbininkas nei kaip pakaitininkas.';
+      } else if (data.aug >= 54) {
+        note = 'Mišrus naudojimo modelis — tiek augmentacija, tiek automatizacija yra svarbios šioje rinkoje.';
+      } else {
+        note = 'Šioje šalyje dominuoja automatizacinis naudojimas — AI dažniau naudojamas užduotims atlikti savarankiškai.';
+      }
+
+      html =
+        '<h2 class="detail__name">' + data.name + '</h2>' +
+        '<div class="detail__aug-split">' +
+          '<div class="detail__aug-bar">' +
+            '<div class="detail__aug-seg detail__aug-seg--aug" style="flex:' + data.aug + '">' +
+              '<span>' + data.aug + '%</span>' +
+            '</div>' +
+            '<div class="detail__aug-seg detail__aug-seg--auto" style="flex:' + autoP + '">' +
+              '<span>' + autoP + '%</span>' +
+            '</div>' +
+          '</div>' +
+          '<div class="detail__aug-labels">' +
+            '<span>Augmentacija</span>' +
+            '<span>Automatizacija</span>' +
+          '</div>' +
+        '</div>' +
+        '<div class="detail__stats">' +
+          '<div class="detail__stat">' +
+            '<span class="detail__stat-value">' + data.aui.toFixed(2) + 'x</span>' +
+            '<span class="detail__stat-label">Naudojimo indeksas</span>' +
+          '</div>' +
+          '<div class="detail__stat">' +
+            '<span class="detail__stat-value">' + data.rank + '</span>' +
+            '<span class="detail__stat-label">Reitingas</span>' +
+          '</div>' +
+        '</div>' +
+        '<p class="detail__aug-note">' + note + '</p>';
+    }
+
+    html +=
+      '<p class="detail__source">' +
+        'Šaltiniai: <a href="https://www.anthropic.com/economic-index" target="_blank" rel="noopener">Anthropic</a>, O*NET, BLS' +
+      '</p>';
+
+    detailPanel.innerHTML = html;
+  }
+
+  // ============================================================
+  //  UPDATE RANKING LIST
+  // ============================================================
+
+  function updateRanking() {
+    var sorted = Object.keys(countries).map(function (code) {
+      return { code: code, data: countries[code] };
+    });
+
+    if (activeFilter === 'augmentation') {
+      sorted.sort(function (a, b) { return b.data.aug - a.data.aug; });
+      rankingTitle.textContent = 'Šalių reitingas pagal augmentaciją';
+    } else {
+      sorted.sort(function (a, b) { return b.data.aui - a.data.aui; });
+      rankingTitle.textContent = 'Šalių reitingas pagal AI naudojimą';
+    }
+
+    var html = '';
+    sorted.forEach(function (item) {
+      var value, barWidth, tier;
+
+      if (activeFilter === 'augmentation') {
+        value = item.data.aug + '%';
+        barWidth = Math.max(((item.data.aug - 45) / 25) * 100, 5);
+        tier = getTier(item.data.aug, augScale);
+      } else {
+        value = item.data.aui.toFixed(2);
+        barWidth = Math.max((item.data.aui / 3.5) * 100, 5);
+        tier = getTier(item.data.aui, usageScale);
+      }
+
+      html +=
+        '<div class="ranking-item' + (item.code === activeCountry ? ' ranking-item--active' : '') + '" data-country="' + item.code + '">' +
+          '<span class="ranking-name">' + item.data.name + '</span>' +
+          '<div class="ranking-bar">' +
+            '<div class="ranking-bar__fill" style="width:' + barWidth + '%;background:' + tier.fill + '"></div>' +
+          '</div>' +
+          '<span class="ranking-value">' + value + '</span>' +
+        '</div>';
+    });
+
+    rankingGrid.innerHTML = html;
+
+    // Attach click handlers
+    var items = rankingGrid.querySelectorAll('.ranking-item');
+    items.forEach(function (item) {
+      item.addEventListener('click', function () {
+        selectCountry(this.getAttribute('data-country'));
+      });
+    });
+  }
+
+  // ============================================================
+  //  FILTER INFO / LEGEND / CONTEXT
+  // ============================================================
+
+  var filterMeta = {
+    usage: {
+      title: 'AI naudojimo indeksas',
+      desc: 'Matuoja, ar šalis naudoja AI daugiau (>1) ar mažiau (<1) nei tikėtina pagal populiaciją. Kuo didesnis skaičius, tuo aktyviau šalis naudoja AI.',
+      legendEnd: 'Daugiau AI naudojimo'
+    },
+    augmentation: {
+      title: 'Augmentacija vs. Automatizacija',
+      desc: 'Augmentacija — AI padeda žmogui dirbti efektyviau. Automatizacija — AI atlieka užduotį savarankiškai. Šalys su didesniu naudojimu dažniau renkasi augmentaciją.',
+      legendEnd: 'Daugiau augmentacijos'
+    },
+    jobs: {
+      title: 'Profesijų naudojimas',
+      desc: 'Kuriose profesijose AI naudojamas daugiausiai? Paspauskite ant šalies žemėlapyje ir peržiūrėkite profesijų kategorijas žemiau.',
+      legendEnd: 'Daugiau AI naudojimo'
+    }
+  };
+
+  function updateFilterInfo() {
+    var meta = filterMeta[activeFilter];
+    infoPanel.innerHTML =
+      '<h2 class="explorer__info-title">' + meta.title + '</h2>' +
+      '<p class="explorer__info-desc">' + meta.desc + '</p>';
+  }
+
+  function updateLegend() {
+    var scale = activeFilter === 'augmentation' ? augScale : usageScale;
+    var meta = filterMeta[activeFilter];
+    var html = '<span>Mažiau</span><div class="legend-scale">';
+    for (var i = scale.length - 1; i >= 0; i--) {
+      html += '<div class="legend-swatch" style="background:' + scale[i].fill + '"></div>';
+    }
+    html += '</div><span>' + meta.legendEnd + '</span>';
+    legendEl.innerHTML = html;
+  }
+
+  function updateContextPanels() {
+    contextAug.style.display = activeFilter === 'augmentation' ? 'block' : 'none';
+    contextJobs.style.display = activeFilter === 'jobs' ? 'block' : 'none';
+  }
+
+  // ============================================================
+  //  SELECT COUNTRY / SWITCH FILTER
+  // ============================================================
+
+  function selectCountry(code) {
+    activeCountry = code;
+    tiles.forEach(function (t) { t.classList.remove('active'); });
+    var tile = document.querySelector('.geo-tile[data-country="' + code + '"]');
+    if (tile) tile.classList.add('active');
+    updateDetail();
+    updateRanking();
+  }
+
+  function switchFilter(filter) {
+    activeFilter = filter;
+    filterBtns.forEach(function (btn) {
+      btn.classList.toggle('filter-btn--active', btn.getAttribute('data-filter') === filter);
+    });
+    updateMapColors();
+    updateDetail();
+    updateRanking();
+    updateFilterInfo();
+    updateLegend();
+    updateContextPanels();
+  }
+
+  // ============================================================
+  //  JOB EXPLORER (treemap interaction)
+  // ============================================================
+
   var treemapItems = document.querySelectorAll('.treemap__item');
   var jobDetailTitle = document.getElementById('job-detail-title');
   var jobDetailPct = document.getElementById('job-detail-pct');
@@ -463,9 +683,10 @@
 
     var tasksHtml = '';
     data.tasks.forEach(function (task) {
-      tasksHtml += '<li>' +
-        '<span class="task-text">' + task[0] + '</span>' +
-        '<span class="task-pct">' + task[1] + '</span>' +
+      tasksHtml +=
+        '<li>' +
+          '<span class="task-text">' + task[0] + '</span>' +
+          '<span class="task-pct">' + task[1] + '</span>' +
         '</li>';
     });
     jobDetailTasks.innerHTML = tasksHtml;
@@ -476,5 +697,31 @@
       selectJob(this.getAttribute('data-job'));
     });
   });
+
+  // ============================================================
+  //  EVENT LISTENERS
+  // ============================================================
+
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      switchFilter(this.getAttribute('data-filter'));
+    });
+  });
+
+  tiles.forEach(function (tile) {
+    tile.addEventListener('click', function () {
+      selectCountry(this.getAttribute('data-country'));
+    });
+  });
+
+  // ============================================================
+  //  INIT
+  // ============================================================
+
+  updateMapColors();
+  updateFilterInfo();
+  updateLegend();
+  updateContextPanels();
+  selectCountry('LT');
 
 })();

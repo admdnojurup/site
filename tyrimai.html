@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI adopcija Europoje — nclaude</title>
-  <meta name="description" content="Anthropic Economic Index duomenys: kaip AI naudojamas Europoje, kurios šalys ir profesijos pirmautoja, ir ką tai reiškia jūsų verslui.">
+  <meta name="description" content="Interaktyvus žemėlapis: kaip AI naudojamas 29 Europos šalyse, kurios profesijos pirmautoja, ir ką tai reiškia jūsų verslui.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -89,221 +89,203 @@
     </div>
   </section>
 
-  <!-- Tabbed Explorer -->
-  <section class="research-tabs">
+  <!-- Interactive Map Explorer -->
+  <section class="explorer" id="explorer">
     <div class="container">
-      <div class="tabs-nav reveal" role="tablist">
-        <button class="tabs-nav__item active" role="tab" data-tab="countries" aria-selected="true">Šalių naudojimas</button>
-        <button class="tabs-nav__item" role="tab" data-tab="jobs" aria-selected="false">Profesijų naršyklė</button>
-        <button class="tabs-nav__item" role="tab" data-tab="augauto" aria-selected="false">Augmentacija vs. Automatizacija</button>
+
+      <!-- Filter pills -->
+      <div class="explorer__filters reveal">
+        <button class="filter-btn filter-btn--active" data-filter="usage">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 20V10M12 20V4M6 20v-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Naudojimo indeksas
+        </button>
+        <button class="filter-btn" data-filter="augmentation">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Augmentacija vs. Automatizacija
+        </button>
+        <button class="filter-btn" data-filter="jobs">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="7" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" stroke="currentColor" stroke-width="2"/></svg>
+          Profesijos
+        </button>
       </div>
 
-      <!-- ==================== TAB 1: Country Usage ==================== -->
-      <div class="tab-panel active" id="tab-countries">
-        <div class="country-layout">
-          <div>
-            <div class="europe-map" id="europe-map">
-              <!-- Row 1 -->
-              <div class="europe-tile europe-tile--leading tile-IS" data-country="IS">IS</div>
-              <div class="europe-tile europe-tile--upper tile-NO" data-country="NO">NO</div>
-              <div class="europe-tile europe-tile--upper tile-SE" data-country="SE">SE</div>
-              <div class="europe-tile europe-tile--mid-upper tile-FI" data-country="FI">FI</div>
-              <!-- Row 2 -->
-              <div class="europe-tile europe-tile--upper tile-IE" data-country="IE">IE</div>
-              <div class="europe-tile europe-tile--upper tile-UK" data-country="UK">UK</div>
-              <div class="europe-tile europe-tile--mid tile-DK" data-country="DK">DK</div>
-              <div class="europe-tile europe-tile--mid-upper tile-EE" data-country="EE">EE</div>
-              <div class="europe-tile europe-tile--mid tile-LV" data-country="LV">LV</div>
-              <div class="europe-tile europe-tile--mid tile-LT active" data-country="LT">LT</div>
-              <!-- Row 3 -->
-              <div class="europe-tile europe-tile--lower tile-PT" data-country="PT">PT</div>
-              <div class="europe-tile europe-tile--lower tile-ES" data-country="ES">ES</div>
-              <div class="europe-tile europe-tile--mid tile-FR" data-country="FR">FR</div>
-              <div class="europe-tile europe-tile--mid tile-BE" data-country="BE">BE</div>
-              <div class="europe-tile europe-tile--upper tile-NL" data-country="NL">NL</div>
-              <div class="europe-tile europe-tile--mid tile-DE" data-country="DE">DE</div>
-              <div class="europe-tile europe-tile--emerging tile-PL" data-country="PL">PL</div>
-              <div class="europe-tile europe-tile--lower tile-CZ" data-country="CZ">CZ</div>
-              <div class="europe-tile europe-tile--lower tile-SK" data-country="SK">SK</div>
-              <!-- Row 4 -->
-              <div class="europe-tile europe-tile--lower tile-IT" data-country="IT">IT</div>
-              <div class="europe-tile europe-tile--leading tile-CH" data-country="CH">CH</div>
-              <div class="europe-tile europe-tile--mid tile-AT" data-country="AT">AT</div>
-              <div class="europe-tile europe-tile--emerging tile-HU" data-country="HU">HU</div>
-              <div class="europe-tile europe-tile--emerging tile-RO" data-country="RO">RO</div>
-              <!-- Row 5 -->
-              <div class="europe-tile europe-tile--lower tile-SI" data-country="SI">SI</div>
-              <div class="europe-tile europe-tile--emerging tile-HR" data-country="HR">HR</div>
-              <div class="europe-tile europe-tile--emerging tile-RS" data-country="RS">RS</div>
-              <div class="europe-tile europe-tile--emerging tile-BG" data-country="BG">BG</div>
-              <!-- Row 6 -->
-              <div class="europe-tile europe-tile--emerging tile-GR" data-country="GR">GR</div>
-            </div>
-            <div class="map-legend">
-              <span>Mažiau</span>
-              <div class="map-legend__scale">
-                <div class="map-legend__swatch" style="background:#d6f0e8"></div>
-                <div class="map-legend__swatch" style="background:#b3e2d6"></div>
-                <div class="map-legend__swatch" style="background:#8ad0c0"></div>
-                <div class="map-legend__swatch" style="background:#5cb8a5"></div>
-                <div class="map-legend__swatch" style="background:#3a9e8b"></div>
-                <div class="map-legend__swatch" style="background:#1a7f6d"></div>
-              </div>
-              <span>Daugiau AI naudojimo</span>
-            </div>
+      <!-- Map + Detail layout -->
+      <div class="explorer__layout">
+        <div class="explorer__main">
+          <!-- Filter info -->
+          <div class="explorer__info" id="explorer-info"></div>
+
+          <!-- SVG Map -->
+          <div class="explorer__map-wrap">
+            <svg class="geo-map" id="geo-map" viewBox="10 45 480 370" xmlns="http://www.w3.org/2000/svg">
+              <!-- Iceland -->
+              <g class="geo-tile" data-country="IS">
+                <rect x="40" y="70" width="34" height="26" rx="4"/>
+                <text x="57" y="83" text-anchor="middle" dominant-baseline="central">IS</text>
+              </g>
+              <!-- Finland -->
+              <g class="geo-tile" data-country="FI">
+                <rect x="400" y="80" width="34" height="26" rx="4"/>
+                <text x="417" y="93" text-anchor="middle" dominant-baseline="central">FI</text>
+              </g>
+              <!-- Norway -->
+              <g class="geo-tile" data-country="NO">
+                <rect x="280" y="90" width="34" height="26" rx="4"/>
+                <text x="297" y="103" text-anchor="middle" dominant-baseline="central">NO</text>
+              </g>
+              <!-- Sweden -->
+              <g class="geo-tile" data-country="SE">
+                <rect x="320" y="115" width="34" height="26" rx="4"/>
+                <text x="337" y="128" text-anchor="middle" dominant-baseline="central">SE</text>
+              </g>
+              <!-- Estonia -->
+              <g class="geo-tile" data-country="EE">
+                <rect x="395" y="140" width="34" height="26" rx="4"/>
+                <text x="412" y="153" text-anchor="middle" dominant-baseline="central">EE</text>
+              </g>
+              <!-- Latvia -->
+              <g class="geo-tile" data-country="LV">
+                <rect x="390" y="168" width="34" height="26" rx="4"/>
+                <text x="407" y="181" text-anchor="middle" dominant-baseline="central">LV</text>
+              </g>
+              <!-- Denmark -->
+              <g class="geo-tile" data-country="DK">
+                <rect x="275" y="175" width="34" height="26" rx="4"/>
+                <text x="292" y="188" text-anchor="middle" dominant-baseline="central">DK</text>
+              </g>
+              <!-- Lithuania -->
+              <g class="geo-tile" data-country="LT">
+                <rect x="385" y="196" width="34" height="26" rx="4"/>
+                <text x="402" y="209" text-anchor="middle" dominant-baseline="central">LT</text>
+              </g>
+              <!-- Ireland -->
+              <g class="geo-tile" data-country="IE">
+                <rect x="140" y="195" width="34" height="26" rx="4"/>
+                <text x="157" y="208" text-anchor="middle" dominant-baseline="central">IE</text>
+              </g>
+              <!-- United Kingdom -->
+              <g class="geo-tile" data-country="UK">
+                <rect x="185" y="185" width="34" height="26" rx="4"/>
+                <text x="202" y="198" text-anchor="middle" dominant-baseline="central">UK</text>
+              </g>
+              <!-- Netherlands -->
+              <g class="geo-tile" data-country="NL">
+                <rect x="245" y="215" width="34" height="26" rx="4"/>
+                <text x="262" y="228" text-anchor="middle" dominant-baseline="central">NL</text>
+              </g>
+              <!-- Belgium -->
+              <g class="geo-tile" data-country="BE">
+                <rect x="240" y="245" width="34" height="26" rx="4"/>
+                <text x="257" y="258" text-anchor="middle" dominant-baseline="central">BE</text>
+              </g>
+              <!-- Germany -->
+              <g class="geo-tile" data-country="DE">
+                <rect x="290" y="230" width="34" height="26" rx="4"/>
+                <text x="307" y="243" text-anchor="middle" dominant-baseline="central">DE</text>
+              </g>
+              <!-- Poland -->
+              <g class="geo-tile" data-country="PL">
+                <rect x="360" y="215" width="34" height="26" rx="4"/>
+                <text x="377" y="228" text-anchor="middle" dominant-baseline="central">PL</text>
+              </g>
+              <!-- France -->
+              <g class="geo-tile" data-country="FR">
+                <rect x="220" y="290" width="34" height="26" rx="4"/>
+                <text x="237" y="303" text-anchor="middle" dominant-baseline="central">FR</text>
+              </g>
+              <!-- Czech Republic -->
+              <g class="geo-tile" data-country="CZ">
+                <rect x="325" y="258" width="34" height="26" rx="4"/>
+                <text x="342" y="271" text-anchor="middle" dominant-baseline="central">CZ</text>
+              </g>
+              <!-- Slovakia -->
+              <g class="geo-tile" data-country="SK">
+                <rect x="360" y="260" width="34" height="26" rx="4"/>
+                <text x="377" y="273" text-anchor="middle" dominant-baseline="central">SK</text>
+              </g>
+              <!-- Switzerland -->
+              <g class="geo-tile" data-country="CH">
+                <rect x="270" y="285" width="34" height="26" rx="4"/>
+                <text x="287" y="298" text-anchor="middle" dominant-baseline="central">CH</text>
+              </g>
+              <!-- Austria -->
+              <g class="geo-tile" data-country="AT">
+                <rect x="320" y="286" width="34" height="26" rx="4"/>
+                <text x="337" y="299" text-anchor="middle" dominant-baseline="central">AT</text>
+              </g>
+              <!-- Hungary -->
+              <g class="geo-tile" data-country="HU">
+                <rect x="365" y="290" width="34" height="26" rx="4"/>
+                <text x="382" y="303" text-anchor="middle" dominant-baseline="central">HU</text>
+              </g>
+              <!-- Romania -->
+              <g class="geo-tile" data-country="RO">
+                <rect x="410" y="295" width="34" height="26" rx="4"/>
+                <text x="427" y="308" text-anchor="middle" dominant-baseline="central">RO</text>
+              </g>
+              <!-- Slovenia -->
+              <g class="geo-tile" data-country="SI">
+                <rect x="310" y="314" width="34" height="26" rx="4"/>
+                <text x="327" y="327" text-anchor="middle" dominant-baseline="central">SI</text>
+              </g>
+              <!-- Croatia -->
+              <g class="geo-tile" data-country="HR">
+                <rect x="348" y="326" width="34" height="26" rx="4"/>
+                <text x="365" y="339" text-anchor="middle" dominant-baseline="central">HR</text>
+              </g>
+              <!-- Italy -->
+              <g class="geo-tile" data-country="IT">
+                <rect x="275" y="340" width="34" height="26" rx="4"/>
+                <text x="292" y="353" text-anchor="middle" dominant-baseline="central">IT</text>
+              </g>
+              <!-- Serbia -->
+              <g class="geo-tile" data-country="RS">
+                <rect x="384" y="325" width="34" height="26" rx="4"/>
+                <text x="401" y="338" text-anchor="middle" dominant-baseline="central">RS</text>
+              </g>
+              <!-- Bulgaria -->
+              <g class="geo-tile" data-country="BG">
+                <rect x="420" y="340" width="34" height="26" rx="4"/>
+                <text x="437" y="353" text-anchor="middle" dominant-baseline="central">BG</text>
+              </g>
+              <!-- Portugal -->
+              <g class="geo-tile" data-country="PT">
+                <rect x="130" y="365" width="34" height="26" rx="4"/>
+                <text x="147" y="378" text-anchor="middle" dominant-baseline="central">PT</text>
+              </g>
+              <!-- Spain -->
+              <g class="geo-tile" data-country="ES">
+                <rect x="175" y="355" width="34" height="26" rx="4"/>
+                <text x="192" y="368" text-anchor="middle" dominant-baseline="central">ES</text>
+              </g>
+              <!-- Greece -->
+              <g class="geo-tile" data-country="GR">
+                <rect x="390" y="370" width="34" height="26" rx="4"/>
+                <text x="407" y="383" text-anchor="middle" dominant-baseline="central">GR</text>
+              </g>
+            </svg>
           </div>
 
-          <!-- Country Detail Panel -->
-          <div class="country-detail" id="country-detail">
-            <h2 class="country-detail__name" id="detail-name">Lietuva</h2>
-            <div class="country-detail__stats">
-              <div class="country-stat">
-                <span class="country-stat__value" id="detail-rank">23 / 116</span>
-                <span class="country-stat__label">Naudojimo reitingas</span>
-              </div>
-              <div class="country-stat">
-                <span class="country-stat__value" id="detail-aui">2.09x</span>
-                <span class="country-stat__label">Naudojimo indeksas</span>
-              </div>
-            </div>
-            <div class="usage-bar">
-              <div class="usage-bar__label">
-                <span>AI naudojimo indeksas (AUI)</span>
-              </div>
-              <div class="usage-bar__track">
-                <div class="usage-bar__fill" id="detail-bar" style="width: 52%"></div>
-                <div class="usage-bar__marker-expected"></div>
-              </div>
-            </div>
-            <div class="country-tasks">
-              <h3 class="country-tasks__title">Populiariausios užduotys</h3>
-              <div id="detail-tasks">
-                <div class="country-task">
-                  <span class="country-task__num">1.</span>
-                  <span class="country-task__text">Kodo derinimas, taisymas ir refaktoringas</span>
-                  <span class="country-task__pct">6.3%</span>
-                </div>
-                <div class="country-task">
-                  <span class="country-task__num">2.</span>
-                  <span class="country-task__text">Produktų paieška ir palyginimas</span>
-                  <span class="country-task__pct">4.6%</span>
-                </div>
-                <div class="country-task">
-                  <span class="country-task__num">3.</span>
-                  <span class="country-task__text">Svetainių ir aplikacijų kūrimas</span>
-                  <span class="country-task__pct">3.9%</span>
-                </div>
-              </div>
-            </div>
-            <p class="data-source" style="margin-top:16px; border:none; text-align:left; padding:0;">
-              Šaltiniai: <a href="https://www.anthropic.com/economic-index" target="_blank" rel="noopener">Anthropic</a>, O*NET, BLS
-            </p>
-          </div>
+          <!-- Legend -->
+          <div class="explorer__legend" id="map-legend"></div>
+
+          <p class="explorer__map-hint">Paspauskite ant šalies, kad pamatytumėte detales</p>
         </div>
+
+        <!-- Detail panel -->
+        <div class="explorer__detail" id="explorer-detail"></div>
       </div>
 
-      <!-- ==================== TAB 2: Job Explorer ==================== -->
-      <div class="tab-panel" id="tab-jobs">
-        <div class="job-explorer-layout">
-          <div>
-            <p style="font-family:var(--font-ui); font-size:13px; color:var(--color-text-tertiary); margin-bottom:16px;">
-              Paspauskite ant kategorijos, kad pamatytumėte detales. Kategorijos pagal O*NET-SOC klasifikaciją.
-            </p>
-            <div class="treemap" id="treemap">
-              <div class="treemap__item treemap__item--computer active" data-job="computer"
-                   style="flex: 0 0 100%; height: 180px;">
-                <span class="treemap__item-name">Kompiuteriai ir matematika</span>
-                <span class="treemap__item-value">37.2%</span>
-              </div>
-              <div class="treemap__item treemap__item--education" data-job="education"
-                   style="flex: 0 0 32%; height: 100px;">
-                <span class="treemap__item-name">Švietimas ir bibliotekos</span>
-                <span class="treemap__item-value">12.0%</span>
-              </div>
-              <div class="treemap__item treemap__item--arts" data-job="arts"
-                   style="flex: 0 0 28%; height: 100px;">
-                <span class="treemap__item-name">Menas, dizainas, medija</span>
-                <span class="treemap__item-value">10.3%</span>
-              </div>
-              <div class="treemap__item treemap__item--management" data-job="management"
-                   style="flex: 0 0 19%; height: 100px;">
-                <span class="treemap__item-name">Valdymas</span>
-                <span class="treemap__item-value">7.8%</span>
-              </div>
-              <div class="treemap__item treemap__item--business" data-job="business"
-                   style="flex: 0 0 17%; height: 100px;">
-                <span class="treemap__item-name">Verslas ir finansai</span>
-                <span class="treemap__item-value">6.2%</span>
-              </div>
-              <div class="treemap__item treemap__item--science" data-job="science"
-                   style="flex: 0 0 22%; height: 80px;">
-                <span class="treemap__item-name">Mokslas</span>
-                <span class="treemap__item-value">5.1%</span>
-              </div>
-              <div class="treemap__item treemap__item--legal" data-job="legal"
-                   style="flex: 0 0 18%; height: 80px;">
-                <span class="treemap__item-name">Teisė</span>
-                <span class="treemap__item-value">4.5%</span>
-              </div>
-              <div class="treemap__item treemap__item--office" data-job="office"
-                   style="flex: 0 0 18%; height: 80px;">
-                <span class="treemap__item-name">Biuro administracija</span>
-                <span class="treemap__item-value">3.7%</span>
-              </div>
-              <div class="treemap__item treemap__item--healthcare" data-job="healthcare"
-                   style="flex: 0 0 16%; height: 80px;">
-                <span class="treemap__item-name">Sveikatos apsauga</span>
-                <span class="treemap__item-value">3.4%</span>
-              </div>
-              <div class="treemap__item treemap__item--sales" data-job="sales"
-                   style="flex: 0 0 12%; height: 80px;">
-                <span class="treemap__item-name">Pardavimai</span>
-                <span class="treemap__item-value">2.8%</span>
-              </div>
-              <div class="treemap__item treemap__item--other" data-job="other"
-                   style="flex: 0 0 10%; height: 80px;">
-                <span class="treemap__item-name">Kita</span>
-                <span class="treemap__item-value">7.0%</span>
-              </div>
-            </div>
-            <p class="treemap-note">Procentai rodo AI pokalbių dalį, susietą su kiekviena užduočių kategorija. Kategorijos pagal O*NET-SOC kodavimą.</p>
-          </div>
-          <div class="job-detail" id="job-detail">
-            <h3 class="job-detail__title" id="job-detail-title">Kompiuteriai ir matematika</h3>
-            <div class="job-detail__pct" id="job-detail-pct">37.2%</div>
-            <p class="job-detail__desc" id="job-detail-desc">
-              Didžiausia AI naudojimo kategorija. Apima programinės įrangos kūrimą, derinimą, duomenų mokslą, tinklų administravimą ir matematinę analizę.
-            </p>
-            <h4 style="font-family:var(--font-heading); font-size:14px; font-weight:600; margin-bottom:12px;">Populiariausios užduotys:</h4>
-            <ul class="job-tasks-list" id="job-detail-tasks">
-              <li>
-                <span class="task-text">Programinės įrangos modifikavimas ir klaidų taisymas</span>
-                <span class="task-pct">4.79%</span>
-              </li>
-              <li>
-                <span class="task-text">Klaidų tikrinimas ir derinimas</span>
-                <span class="task-pct">3.00%</span>
-              </li>
-              <li>
-                <span class="task-text">Sistemos administravimas ir trikčių šalinimas</span>
-                <span class="task-pct">1.81%</span>
-              </li>
-              <li>
-                <span class="task-text">Naujų programų kūrimas pagal reikalavimus</span>
-                <span class="task-pct">1.46%</span>
-              </li>
-              <li>
-                <span class="task-text">Svetainių projektavimas ir kūrimas</span>
-                <span class="task-pct">1.19%</span>
-              </li>
-            </ul>
-          </div>
-        </div>
+      <!-- Country ranking -->
+      <div class="explorer__ranking reveal">
+        <h3 class="ranking__title" id="ranking-title">Šalių reitingas</h3>
+        <div class="ranking__grid" id="ranking-grid"></div>
       </div>
 
-      <!-- ==================== TAB 3: Augmentation vs Automation ==================== -->
-      <div class="tab-panel" id="tab-augauto">
+      <!-- Contextual: Augmentation (shown when aug filter active) -->
+      <div class="context-panel" id="context-augmentation" style="display:none">
         <div class="aug-section">
+          <h3 class="context-panel__title">Globalus vaizdas: Augmentacija vs. Automatizacija</h3>
           <div class="aug-bar">
             <div class="aug-bar__visual">
               <div class="aug-bar__seg aug-bar__seg--aug" style="flex: 57;">
@@ -405,6 +387,103 @@
             <p class="aug-insight__text">
               Duomenys rodo aiškią tendenciją: šalyse su didesniu AI naudojimo indeksu, didesnė dalis naudojimo yra augmentacinė. Įmonės, kurios daugiau naudoja AI, daro tai bendradarbiaudamos — AI padeda specialistams dirbti efektyviau, o ne pakeičia juos. Pradedantys naudotojai dažniau deleguoja visą užduotį, tuo tarpu patyrę — dirba kartu su AI iteraciškai.
             </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contextual: Jobs (shown when jobs filter active) -->
+      <div class="context-panel" id="context-jobs" style="display:none">
+        <h3 class="context-panel__title">Profesijų kategorijos pagal AI naudojimą</h3>
+        <p class="context-panel__subtitle">Paspauskite ant kategorijos, kad pamatytumėte detales. Kategorijos pagal O*NET-SOC klasifikaciją.</p>
+        <div class="jobs-layout">
+          <div>
+            <div class="treemap" id="treemap">
+              <div class="treemap__item treemap__item--computer active" data-job="computer"
+                   style="flex: 0 0 100%; height: 180px;">
+                <span class="treemap__item-name">Kompiuteriai ir matematika</span>
+                <span class="treemap__item-value">37.2%</span>
+              </div>
+              <div class="treemap__item treemap__item--education" data-job="education"
+                   style="flex: 0 0 32%; height: 100px;">
+                <span class="treemap__item-name">Švietimas ir bibliotekos</span>
+                <span class="treemap__item-value">12.0%</span>
+              </div>
+              <div class="treemap__item treemap__item--arts" data-job="arts"
+                   style="flex: 0 0 28%; height: 100px;">
+                <span class="treemap__item-name">Menas, dizainas, medija</span>
+                <span class="treemap__item-value">10.3%</span>
+              </div>
+              <div class="treemap__item treemap__item--management" data-job="management"
+                   style="flex: 0 0 19%; height: 100px;">
+                <span class="treemap__item-name">Valdymas</span>
+                <span class="treemap__item-value">7.8%</span>
+              </div>
+              <div class="treemap__item treemap__item--business" data-job="business"
+                   style="flex: 0 0 17%; height: 100px;">
+                <span class="treemap__item-name">Verslas ir finansai</span>
+                <span class="treemap__item-value">6.2%</span>
+              </div>
+              <div class="treemap__item treemap__item--science" data-job="science"
+                   style="flex: 0 0 22%; height: 80px;">
+                <span class="treemap__item-name">Mokslas</span>
+                <span class="treemap__item-value">5.1%</span>
+              </div>
+              <div class="treemap__item treemap__item--legal" data-job="legal"
+                   style="flex: 0 0 18%; height: 80px;">
+                <span class="treemap__item-name">Teisė</span>
+                <span class="treemap__item-value">4.5%</span>
+              </div>
+              <div class="treemap__item treemap__item--office" data-job="office"
+                   style="flex: 0 0 18%; height: 80px;">
+                <span class="treemap__item-name">Biuro administracija</span>
+                <span class="treemap__item-value">3.7%</span>
+              </div>
+              <div class="treemap__item treemap__item--healthcare" data-job="healthcare"
+                   style="flex: 0 0 16%; height: 80px;">
+                <span class="treemap__item-name">Sveikatos apsauga</span>
+                <span class="treemap__item-value">3.4%</span>
+              </div>
+              <div class="treemap__item treemap__item--sales" data-job="sales"
+                   style="flex: 0 0 12%; height: 80px;">
+                <span class="treemap__item-name">Pardavimai</span>
+                <span class="treemap__item-value">2.8%</span>
+              </div>
+              <div class="treemap__item treemap__item--other" data-job="other"
+                   style="flex: 0 0 10%; height: 80px;">
+                <span class="treemap__item-name">Kita</span>
+                <span class="treemap__item-value">7.0%</span>
+              </div>
+            </div>
+          </div>
+          <div class="job-detail" id="job-detail">
+            <h3 class="job-detail__title" id="job-detail-title">Kompiuteriai ir matematika</h3>
+            <div class="job-detail__pct" id="job-detail-pct">37.2%</div>
+            <p class="job-detail__desc" id="job-detail-desc">
+              Didžiausia AI naudojimo kategorija. Apima programinės įrangos kūrimą, derinimą, duomenų mokslą, tinklų administravimą ir matematinę analizę.
+            </p>
+            <h4 class="job-detail__subtitle">Populiariausios užduotys:</h4>
+            <ul class="job-tasks-list" id="job-detail-tasks">
+              <li>
+                <span class="task-text">Programinės įrangos modifikavimas ir klaidų taisymas</span>
+                <span class="task-pct">4.79%</span>
+              </li>
+              <li>
+                <span class="task-text">Klaidų tikrinimas ir derinimas</span>
+                <span class="task-pct">3.00%</span>
+              </li>
+              <li>
+                <span class="task-text">Sistemos administravimas ir trikčių šalinimas</span>
+                <span class="task-pct">1.81%</span>
+              </li>
+              <li>
+                <span class="task-text">Naujų programų kūrimas pagal reikalavimus</span>
+                <span class="task-pct">1.46%</span>
+              </li>
+              <li>
+                <span class="task-text">Svetainių projektavimas ir kūrimas</span>
+                <span class="task-pct">1.19%</span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
