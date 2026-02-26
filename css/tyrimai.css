@@ -166,10 +166,10 @@
 /* --- Europe Tile Map --- */
 .europe-map {
   display: grid;
-  grid-template-columns: repeat(11, 1fr);
-  grid-template-rows: repeat(7, 1fr);
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(8, 1fr);
   gap: 3px;
-  max-width: 640px;
+  max-width: 580px;
 }
 
 .europe-tile {
@@ -207,41 +207,43 @@
 .europe-tile--lower     { background-color: #b3e2d6; color: #0a3d33; }
 .europe-tile--emerging  { background-color: #d6f0e8; color: #3a6b5e; }
 
-/* Grid positions for each country */
+/* Grid positions — shaped as Europe */
 .tile-IS { grid-row: 1; grid-column: 1; }
-.tile-NO { grid-row: 1; grid-column: 7; }
-.tile-SE { grid-row: 1; grid-column: 8; }
 .tile-FI { grid-row: 1; grid-column: 9; }
 
-.tile-IE { grid-row: 2; grid-column: 2; }
-.tile-UK { grid-row: 2; grid-column: 3; }
-.tile-DK { grid-row: 2; grid-column: 7; }
+.tile-NO { grid-row: 2; grid-column: 7; }
+.tile-SE { grid-row: 2; grid-column: 8; }
 .tile-EE { grid-row: 2; grid-column: 9; }
-.tile-LV { grid-row: 2; grid-column: 10; }
-.tile-LT { grid-row: 2; grid-column: 11; }
 
-.tile-PT { grid-row: 3; grid-column: 2; }
-.tile-ES { grid-row: 3; grid-column: 3; }
-.tile-FR { grid-row: 3; grid-column: 4; }
-.tile-BE { grid-row: 3; grid-column: 5; }
-.tile-NL { grid-row: 3; grid-column: 6; }
-.tile-DE { grid-row: 3; grid-column: 7; }
-.tile-PL { grid-row: 3; grid-column: 8; }
-.tile-CZ { grid-row: 3; grid-column: 9; }
-.tile-SK { grid-row: 3; grid-column: 10; }
+.tile-IE { grid-row: 3; grid-column: 2; }
+.tile-UK { grid-row: 3; grid-column: 3; }
+.tile-DK { grid-row: 3; grid-column: 7; }
+.tile-LV { grid-row: 3; grid-column: 9; }
+.tile-LT { grid-row: 3; grid-column: 10; }
 
-.tile-IT { grid-row: 4; grid-column: 4; }
-.tile-CH { grid-row: 4; grid-column: 5; }
-.tile-AT { grid-row: 4; grid-column: 6; }
-.tile-HU { grid-row: 4; grid-column: 7; }
-.tile-RO { grid-row: 4; grid-column: 8; }
+.tile-FR { grid-row: 4; grid-column: 4; }
+.tile-NL { grid-row: 4; grid-column: 5; }
+.tile-DE { grid-row: 4; grid-column: 6; }
+.tile-PL { grid-row: 4; grid-column: 7; }
 
-.tile-SI { grid-row: 5; grid-column: 5; }
-.tile-HR { grid-row: 5; grid-column: 6; }
-.tile-RS { grid-row: 5; grid-column: 7; }
-.tile-BG { grid-row: 5; grid-column: 8; }
+.tile-PT { grid-row: 5; grid-column: 2; }
+.tile-ES { grid-row: 5; grid-column: 3; }
+.tile-BE { grid-row: 5; grid-column: 4; }
+.tile-CH { grid-row: 5; grid-column: 5; }
+.tile-AT { grid-row: 5; grid-column: 6; }
+.tile-CZ { grid-row: 5; grid-column: 7; }
+.tile-SK { grid-row: 5; grid-column: 8; }
 
-.tile-GR { grid-row: 6; grid-column: 7; }
+.tile-IT { grid-row: 6; grid-column: 5; }
+.tile-SI { grid-row: 6; grid-column: 6; }
+.tile-HU { grid-row: 6; grid-column: 7; }
+.tile-RO { grid-row: 6; grid-column: 8; }
+
+.tile-HR { grid-row: 7; grid-column: 6; }
+.tile-RS { grid-row: 7; grid-column: 7; }
+.tile-BG { grid-row: 7; grid-column: 8; }
+
+.tile-GR { grid-row: 8; grid-column: 7; }
 
 .map-legend {
   display: flex;
@@ -933,10 +935,10 @@
 /* Mini Europe map for preview card */
 .index-preview__map {
   display: grid;
-  grid-template-columns: repeat(11, 1fr);
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(8, 1fr);
   gap: 3px;
-  max-width: 420px;
+  max-width: 380px;
   justify-self: center;
 }
 

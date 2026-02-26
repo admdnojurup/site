@@ -7,9 +7,6 @@
   'use strict';
 
   // --- European Country Data ---
-  // Sources: Anthropic Economic Index (confirmed: UK 2.67, DK 2.1, LT 2.09 rank 23/116)
-  // Other values estimated via published GDP-AUI correlation (elasticity 0.7)
-  // and tech ecosystem factors. Germany & France confirmed top 20.
   var countries = {
     IS: {
       name: 'Islandija', rank: '5 / 116', aui: 3.50, obs: 280,
