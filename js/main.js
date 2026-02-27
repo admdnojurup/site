@@ -27,50 +27,38 @@
   revealElements.forEach((el) => revealObserver.observe(el));
 
   // --- Service Row Active Highlighting ---
-  // Highlights the row closest to the viewport center as you scroll
+  // Continuously highlights the row closest to the viewport center
   var serviceRows = document.querySelectorAll('.service-row');
 
   if (serviceRows.length) {
-    var visibleRows = new Set();
+    var activeRow = null;
 
-    var activeObserver = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            visibleRows.add(entry.target);
-          } else {
-            visibleRows.delete(entry.target);
-          }
-        });
+    function updateActiveRow() {
+      var viewportCenter = window.innerHeight / 2;
+      var closest = null;
+      var closestDist = Infinity;
 
-        // Find the row closest to viewport center
-        var viewportCenter = window.innerHeight / 2;
-        var closest = null;
-        var closestDist = Infinity;
+      serviceRows.forEach(function (row) {
+        var rect = row.getBoundingClientRect();
+        // Skip rows that are fully off-screen
+        if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+        var rowCenter = rect.top + rect.height / 2;
+        var dist = Math.abs(rowCenter - viewportCenter);
+        if (dist < closestDist) {
+          closestDist = dist;
+          closest = row;
+        }
+      });
 
-        visibleRows.forEach(function (row) {
-          var rect = row.getBoundingClientRect();
-          var rowCenter = rect.top + rect.height / 2;
-          var dist = Math.abs(rowCenter - viewportCenter);
-          if (dist < closestDist) {
-            closestDist = dist;
-            closest = row;
-          }
-        });
-
-        serviceRows.forEach(function (row) {
-          row.classList.toggle('active', row === closest);
-        });
-      },
-      {
-        threshold: [0, 0.25, 0.5, 0.75, 1],
-        rootMargin: '-10% 0px -10% 0px',
+      if (closest !== activeRow) {
+        if (activeRow) activeRow.classList.remove('active');
+        if (closest) closest.classList.add('active');
+        activeRow = closest;
       }
-    );
+    }
 
-    serviceRows.forEach(function (row) {
-      activeObserver.observe(row);
-    });
+    window.addEventListener('scroll', updateActiveRow, { passive: true });
+    updateActiveRow();
   }
 
   // --- Navigation scroll state ---
