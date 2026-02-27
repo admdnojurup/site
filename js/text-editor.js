@@ -1,6 +1,6 @@
 /* ========================================
    Text Editor Panel  v1
-   Toggle: Ctrl + Shift + T
+   Toggle: Ctrl + Shift + Y
 
    Makes all [data-text-id] elements editable inline.
    Persists changes to localStorage.
@@ -223,7 +223,7 @@
     /* shortcut hint */
     var shortcut = document.createElement('div');
     shortcut.style.cssText = 'text-align:center;font-size:10px;color:#555550;margin-top:12px;';
-    shortcut.textContent = 'Toggle: Ctrl + Shift + T';
+    shortcut.textContent = 'Toggle: Ctrl + Shift + Y';
     panel.appendChild(shortcut);
 
     document.body.appendChild(overlay);
@@ -264,7 +264,7 @@
 
   /* keyboard shortcut */
   document.addEventListener('keydown', function (e) {
-    if (e.ctrlKey && e.shiftKey && e.key === 'T') { e.preventDefault(); togglePanel(); }
+    if (e.ctrlKey && e.shiftKey && e.key === 'Y') { e.preventDefault(); togglePanel(); }
   });
 
   /* on load — restore saved text */
