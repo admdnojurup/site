@@ -784,11 +784,13 @@ img {
 
 .result-card__image {
   position: relative;
+  height: 185px;
+  overflow: hidden;
 }
 
 .result-card__image img {
   width: 100%;
-  height: clamp(80px, var(--img-case-h), 400px);
+  height: 100%;
   object-fit: cover;
   display: block;
 }
@@ -824,6 +826,7 @@ img {
   letter-spacing: -0.03em;
   margin-bottom: 12px;
   color: var(--color-text-light);
+  white-space: nowrap;
 }
 
 .result-card__text {
@@ -1291,10 +1294,9 @@ img {
 }
 
 [data-img-id="client-d"] {
-  width: 101px;
-  height: 16px;
-  object-fit: cover;
-  transform: scale(1.64);
+  width: 65px;
+  height: 22px;
+  transform: scale(2.81);
   transform-origin: center;
 }
 
@@ -1306,4 +1308,20 @@ img {
 [data-img-id="case-engineering"] {
   width: 522px;
   height: 177px;
+}
+
+[data-img-id="case-finance"] {
+  width: 370px;
+  height: 185px;
+  object-fit: cover;
+  transform: scale(0.99);
+  transform-origin: center;
+}
+
+[data-img-id="case-manufacturing"] {
+  height: 144px;
+  object-fit: cover;
+  object-position: left;
+  transform: scale(1.56);
+  transform-origin: left;
 }
