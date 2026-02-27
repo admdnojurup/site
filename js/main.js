@@ -26,17 +26,14 @@
 
   revealElements.forEach((el) => revealObserver.observe(el));
 
-  // --- Service Row Scroll Snap & Active Highlighting ---
+  // --- Service Row Slide-in & Active Highlighting ---
   var serviceRows = Array.prototype.slice.call(document.querySelectorAll('.service-row'));
-  var servicesSection = document.getElementById('paslaugos');
 
-  if (serviceRows.length && servicesSection) {
-    var currentIndex = 0;
-    var isSnapping = false;
-    var snapCooldown = false;
+  if (serviceRows.length) {
     var activeRow = null;
+    var lastScrollY = window.scrollY;
 
-    // Highlight the row closest to viewport center (runs on every scroll)
+    // Highlight the row closest to viewport center
     function updateActiveRow() {
       var viewportCenter = window.innerHeight / 2;
       var closest = null;
@@ -63,96 +60,43 @@
     window.addEventListener('scroll', updateActiveRow, { passive: true });
     updateActiveRow();
 
-    // Check if the services section is in the "snap zone"
-    function isSectionActive() {
-      var rect = servicesSection.getBoundingClientRect();
-      var navHeight = nav ? nav.offsetHeight : 72;
-      return rect.top <= navHeight + 20 && rect.bottom > window.innerHeight * 0.5;
-    }
+    // Slide-in observer — triggers near the bottom of the viewport
+    // Rows slide in from the left when entering, out to the right when leaving
+    var rowObserver = new IntersectionObserver(
+      function (entries) {
+        var scrollingDown = window.scrollY >= lastScrollY;
+        lastScrollY = window.scrollY;
 
-    // Find which row index is closest to viewport center
-    function getClosestRowIndex() {
-      var viewportCenter = window.innerHeight / 2;
-      var best = 0;
-      var bestDist = Infinity;
-      serviceRows.forEach(function (row, i) {
-        var rect = row.getBoundingClientRect();
-        var dist = Math.abs(rect.top + rect.height / 2 - viewportCenter);
-        if (dist < bestDist) {
-          bestDist = dist;
-          best = i;
-        }
-      });
-      return best;
-    }
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            // Entering: slide in from left
+            entry.target.classList.remove('exit-right');
+            entry.target.classList.add('visible');
+          } else {
+            // Only animate out if the row has been revealed before
+            if (!entry.target.classList.contains('visible')) return;
 
-    // Snap-scroll to a specific row
-    function snapToRow(index) {
-      if (index < 0 || index >= serviceRows.length) return;
-      currentIndex = index;
-      isSnapping = true;
-      var navHeight = nav ? nav.offsetHeight : 72;
-      var rowRect = serviceRows[index].getBoundingClientRect();
-      var targetY = window.scrollY + rowRect.top - navHeight - (window.innerHeight - navHeight - rowRect.height) / 2;
-
-      window.scrollTo({ top: targetY, behavior: 'smooth' });
-
-      // Release snap lock after the animation settles
-      setTimeout(function () {
-        isSnapping = false;
-      }, 600);
-    }
-
-    // Accumulate wheel delta and debounce — one snap per scroll gesture
-    var accumulatedDelta = 0;
-    var wheelTimer = null;
-    var DELTA_THRESHOLD = 30; // pixels of accumulated delta needed to trigger a snap
-    var gestureHandled = false; // only snap once per gesture
-
-    window.addEventListener('wheel', function (e) {
-      if (!isSectionActive()) {
-        // Reset state when outside section
-        accumulatedDelta = 0;
-        gestureHandled = false;
-        return;
+            // Leaving: if it's going up (user scrolled back up), exit right
+            var rect = entry.boundingClientRect;
+            if (rect.top > window.innerHeight * 0.5) {
+              // Row is below viewport center — it left downward, slide right
+              entry.target.classList.remove('visible');
+              entry.target.classList.add('exit-right');
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '-20% 0px 0px 0px',
       }
+    );
 
-      // Block all wheel events while a snap animation is running
-      if (isSnapping) {
-        e.preventDefault();
-        return;
-      }
-
-      e.preventDefault();
-
-      accumulatedDelta += e.deltaY;
-
-      // Clear the gesture-end timer on each new wheel event
-      clearTimeout(wheelTimer);
-
-      // Only snap once per gesture (continuous scroll motion)
-      if (!gestureHandled && Math.abs(accumulatedDelta) >= DELTA_THRESHOLD) {
-        gestureHandled = true;
-        currentIndex = getClosestRowIndex();
-        var direction = accumulatedDelta > 0 ? 1 : -1;
-        var nextIndex = currentIndex + direction;
-
-        // If at the edges, let go — release scroll
-        if (nextIndex < 0 || nextIndex >= serviceRows.length) {
-          accumulatedDelta = 0;
-          gestureHandled = false;
-          return;
-        }
-
-        snapToRow(nextIndex);
-      }
-
-      // Reset when the gesture ends (no wheel events for 150ms)
-      wheelTimer = setTimeout(function () {
-        accumulatedDelta = 0;
-        gestureHandled = false;
-      }, 150);
-    }, { passive: false });
+    // Exclude service rows from the generic reveal observer, use ours instead
+    serviceRows.forEach(function (row) {
+      revealObserver.unobserve(row);
+      rowObserver.observe(row);
+    });
   }
 
   // --- Navigation scroll state ---

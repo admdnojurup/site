@@ -116,7 +116,22 @@ img {
   transform: translateY(0);
 }
 
-/* Service rows reveal one-by-one (no stagger — each triggers on its own scroll) */
+/* Service rows — custom slide-in from left, reversible */
+.service-row.reveal {
+  opacity: 0;
+  transform: translateX(-80px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-row.reveal.visible {
+  transform: translateX(0);
+}
+
+.service-row.reveal.exit-right {
+  opacity: 0;
+  transform: translateX(80px);
+}
 
 .process__steps .process__card.reveal:nth-child(3) { transition-delay: 0.1s; }
 .process__steps .process__card.reveal:nth-child(5) { transition-delay: 0.2s; }
@@ -542,10 +557,10 @@ img {
 .service-row {
   position: relative;
   display: grid;
-  grid-template-columns: 36px 48px 1fr auto 24px;
+  grid-template-columns: 36px 52px 1fr auto 24px;
   align-items: center;
-  gap: 20px;
-  padding: 36px 28px;
+  gap: 24px;
+  padding: 48px 32px;
   border-bottom: 1px solid var(--color-border-light);
   cursor: default;
   transition: opacity 0.5s ease, background var(--transition-base), padding-left var(--transition-base);
@@ -588,7 +603,7 @@ img {
 .service-row.active,
 .service-row:hover {
   background: var(--color-card);
-  padding-left: 36px;
+  padding-left: 40px;
 }
 
 /* Number */
@@ -608,8 +623,8 @@ img {
 
 /* Icon */
 .service-row__icon {
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -632,17 +647,17 @@ img {
 .service-row__content {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 
 .service-row__title {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 600;
   letter-spacing: -0.015em;
 }
 
 .service-row__text {
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.5;
   color: var(--color-text-secondary);
 }
