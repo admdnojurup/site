@@ -546,7 +546,7 @@ img {
   position: relative;
   background-color: var(--color-card);
   border-radius: var(--radius-lg);
-  padding: 44px;
+  padding: 28px 32px;
   border: 1px solid var(--color-border-light);
   overflow: hidden;
   transition: box-shadow var(--transition-slow), border-color var(--transition-base), transform var(--transition-slow);
@@ -580,12 +580,12 @@ img {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 28px;
+  margin-bottom: 18px;
 }
 
 .card__icon {
-  width: 60px;
-  height: 60px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -596,6 +596,11 @@ img {
   transition: background var(--transition-base), border-color var(--transition-base);
 }
 
+.card__icon svg {
+  width: 22px;
+  height: 22px;
+}
+
 .card:hover .card__icon {
   background: linear-gradient(145deg, rgba(217, 119, 87, 0.08) 0%, rgba(217, 119, 87, 0.04) 100%);
   border-color: rgba(217, 119, 87, 0.2);
@@ -603,7 +608,7 @@ img {
 
 .card__number {
   font-family: var(--font-heading);
-  font-size: 48px;
+  font-size: 36px;
   font-weight: 700;
   line-height: 1;
   color: var(--color-border-light);
@@ -624,9 +629,9 @@ img {
 
 .card__text {
   font-size: 15px;
-  line-height: 1.7;
+  line-height: 1.65;
   color: var(--color-text-secondary);
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .card__tags {
