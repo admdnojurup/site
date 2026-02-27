@@ -59,26 +59,30 @@
     window.addEventListener('scroll', updateActiveRow, { passive: true });
     updateActiveRow();
 
-    // Simple reveal observer — fade in once, no slide-out
+    // Reveal all rows together when the section enters viewport (stagger via CSS)
+    var rowsContainer = serviceRows[0].parentElement;
     var rowObserver = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            serviceRows.forEach(function (row) {
+              row.classList.add('visible');
+            });
+            rowObserver.unobserve(entry.target);
           }
         });
       },
       {
-        threshold: 0.15,
-        rootMargin: '0px 0px -60px 0px',
+        threshold: 0.2,
+        rootMargin: '0px 0px -80px 0px',
       }
     );
 
-    // Exclude service rows from the generic reveal observer, use ours instead
+    // Exclude service rows from the generic reveal observer, observe container instead
     serviceRows.forEach(function (row) {
       revealObserver.unobserve(row);
-      rowObserver.observe(row);
     });
+    rowObserver.observe(rowsContainer);
   }
 
   // --- Navigation scroll state ---
