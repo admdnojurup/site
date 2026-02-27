@@ -59,7 +59,7 @@
     window.addEventListener('scroll', updateActiveRow, { passive: true });
     updateActiveRow();
 
-    // Reveal rows as each one enters the viewport (stagger via scroll timing)
+    // Reveal rows on enter, hide on leave — works both directions
     serviceRows.forEach(function (row) {
       revealObserver.unobserve(row);
 
@@ -68,7 +68,8 @@
           entries.forEach(function (entry) {
             if (entry.isIntersecting) {
               entry.target.classList.add('visible');
-              singleRowObserver.unobserve(entry.target);
+            } else {
+              entry.target.classList.remove('visible');
             }
           });
         },
