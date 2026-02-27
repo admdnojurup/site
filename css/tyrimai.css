@@ -278,7 +278,7 @@
   font-family: var(--font-ui);
   font-size: 12px;
   color: var(--color-text-tertiary);
-  margin-bottom: 8px;
+  margin-bottom: 24px;
   display: flex;
   justify-content: space-between;
 }
