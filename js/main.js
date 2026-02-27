@@ -26,6 +26,53 @@
 
   revealElements.forEach((el) => revealObserver.observe(el));
 
+  // --- Service Row Active Highlighting ---
+  // Highlights the row closest to the viewport center as you scroll
+  var serviceRows = document.querySelectorAll('.service-row');
+
+  if (serviceRows.length) {
+    var visibleRows = new Set();
+
+    var activeObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            visibleRows.add(entry.target);
+          } else {
+            visibleRows.delete(entry.target);
+          }
+        });
+
+        // Find the row closest to viewport center
+        var viewportCenter = window.innerHeight / 2;
+        var closest = null;
+        var closestDist = Infinity;
+
+        visibleRows.forEach(function (row) {
+          var rect = row.getBoundingClientRect();
+          var rowCenter = rect.top + rect.height / 2;
+          var dist = Math.abs(rowCenter - viewportCenter);
+          if (dist < closestDist) {
+            closestDist = dist;
+            closest = row;
+          }
+        });
+
+        serviceRows.forEach(function (row) {
+          row.classList.toggle('active', row === closest);
+        });
+      },
+      {
+        threshold: [0, 0.25, 0.5, 0.75, 1],
+        rootMargin: '-10% 0px -10% 0px',
+      }
+    );
+
+    serviceRows.forEach(function (row) {
+      activeObserver.observe(row);
+    });
+  }
+
   // --- Navigation scroll state ---
   const nav = document.getElementById('nav');
   let lastScroll = 0;
