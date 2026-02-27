@@ -131,10 +131,10 @@
   }
 
   function buildPanel() {
-    /* overlay */
+    /* overlay — pointer-events:none so clicks pass through to the page */
     var overlay = document.createElement('div');
     overlay.id = 'text-editor-overlay';
-    overlay.style.cssText = 'display:none;position:fixed;inset:0;background:rgba(0,0,0,0.3);z-index:9996;';
+    overlay.style.cssText = 'display:none;position:fixed;inset:0;background:transparent;z-index:9996;pointer-events:none;';
 
     /* panel */
     var panel = document.createElement('div');
