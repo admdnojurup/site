@@ -58,8 +58,11 @@
   --img-footer-logo: 28px;
 }
 
+html.lenis, html.lenis body {
+  height: auto;
+}
+
 html {
-  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
