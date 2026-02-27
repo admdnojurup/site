@@ -166,4 +166,33 @@
       question.setAttribute('aria-expanded', !isActive);
     });
   });
+
+  // --- Contact Form Submission ---
+  var contactForm = document.getElementById('contact-form');
+  var contactSuccess = document.getElementById('contact-success');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var name = contactForm.querySelector('[name="name"]').value.trim();
+      var email = contactForm.querySelector('[name="email"]').value.trim();
+      var company = contactForm.querySelector('[name="company"]').value.trim();
+      var message = contactForm.querySelector('[name="message"]').value.trim();
+
+      var recipient = 'info@nclaude.lt';
+      var subject = encodeURIComponent('Konsultacijos užklausa – ' + (company || name));
+      var body = encodeURIComponent(
+        'Vardas: ' + name + '\n' +
+        'El. paštas: ' + email + '\n' +
+        'Įmonė: ' + (company || '–') + '\n\n' +
+        message
+      );
+
+      window.location.href = 'mailto:' + recipient + '?subject=' + subject + '&body=' + body;
+
+      contactForm.hidden = true;
+      contactSuccess.hidden = false;
+    });
+  }
 })();
