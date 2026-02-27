@@ -123,7 +123,7 @@
     });
   });
 
-  // --- Smooth scroll for anchor links ---
+  // --- Smooth scroll for anchor links (via Lenis) ---
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
@@ -134,12 +134,13 @@
 
       e.preventDefault();
       const navHeight = nav.offsetHeight;
-      const targetPosition = target.getBoundingClientRect().top + window.scrollY - navHeight - 20;
 
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth',
-      });
+      if (window.__lenis) {
+        window.__lenis.scrollTo(target, { offset: -(navHeight + 20) });
+      } else {
+        const targetPosition = target.getBoundingClientRect().top + window.scrollY - navHeight - 20;
+        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+      }
     });
   });
 
