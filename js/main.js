@@ -67,7 +67,6 @@
     function isSectionActive() {
       var rect = servicesSection.getBoundingClientRect();
       var navHeight = nav ? nav.offsetHeight : 72;
-      // Section top is at or above the nav, and bottom is still below viewport center
       return rect.top <= navHeight + 20 && rect.bottom > window.innerHeight * 0.5;
     }
 
@@ -90,6 +89,7 @@
     // Snap-scroll to a specific row
     function snapToRow(index) {
       if (index < 0 || index >= serviceRows.length) return;
+      currentIndex = index;
       isSnapping = true;
       var navHeight = nav ? nav.offsetHeight : 72;
       var rowRect = serviceRows[index].getBoundingClientRect();
@@ -100,34 +100,58 @@
       // Release snap lock after the animation settles
       setTimeout(function () {
         isSnapping = false;
-      }, 500);
+      }, 600);
     }
 
-    // Wheel handler — hijack scrolling inside the services section
+    // Accumulate wheel delta and debounce — one snap per scroll gesture
+    var accumulatedDelta = 0;
+    var wheelTimer = null;
+    var DELTA_THRESHOLD = 30; // pixels of accumulated delta needed to trigger a snap
+    var gestureHandled = false; // only snap once per gesture
+
     window.addEventListener('wheel', function (e) {
-      if (isSnapping || snapCooldown) {
+      if (!isSectionActive()) {
+        // Reset state when outside section
+        accumulatedDelta = 0;
+        gestureHandled = false;
+        return;
+      }
+
+      // Block all wheel events while a snap animation is running
+      if (isSnapping) {
         e.preventDefault();
         return;
       }
 
-      if (!isSectionActive()) return;
-
-      currentIndex = getClosestRowIndex();
-
-      var direction = e.deltaY > 0 ? 1 : -1;
-      var nextIndex = currentIndex + direction;
-
-      // If we'd go past the edges, let normal scroll take over
-      if (nextIndex < 0 || nextIndex >= serviceRows.length) return;
-
       e.preventDefault();
-      snapCooldown = true;
-      snapToRow(nextIndex);
 
-      // Cooldown prevents rapid multi-snap from a single flick
-      setTimeout(function () {
-        snapCooldown = false;
-      }, 600);
+      accumulatedDelta += e.deltaY;
+
+      // Clear the gesture-end timer on each new wheel event
+      clearTimeout(wheelTimer);
+
+      // Only snap once per gesture (continuous scroll motion)
+      if (!gestureHandled && Math.abs(accumulatedDelta) >= DELTA_THRESHOLD) {
+        gestureHandled = true;
+        currentIndex = getClosestRowIndex();
+        var direction = accumulatedDelta > 0 ? 1 : -1;
+        var nextIndex = currentIndex + direction;
+
+        // If at the edges, let go — release scroll
+        if (nextIndex < 0 || nextIndex >= serviceRows.length) {
+          accumulatedDelta = 0;
+          gestureHandled = false;
+          return;
+        }
+
+        snapToRow(nextIndex);
+      }
+
+      // Reset when the gesture ends (no wheel events for 150ms)
+      wheelTimer = setTimeout(function () {
+        accumulatedDelta = 0;
+        gestureHandled = false;
+      }, 150);
     }, { passive: false });
   }
 
