@@ -31,7 +31,6 @@
 
   if (serviceRows.length) {
     var activeRow = null;
-    var lastScrollY = window.scrollY;
 
     // Highlight the row closest to viewport center
     function updateActiveRow() {
@@ -60,35 +59,18 @@
     window.addEventListener('scroll', updateActiveRow, { passive: true });
     updateActiveRow();
 
-    // Slide-in observer — triggers near the bottom of the viewport
-    // Rows slide in from the left when entering, out to the right when leaving
+    // Simple reveal observer — fade in once, no slide-out
     var rowObserver = new IntersectionObserver(
       function (entries) {
-        var scrollingDown = window.scrollY >= lastScrollY;
-        lastScrollY = window.scrollY;
-
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
-            // Entering: slide in from left
-            entry.target.classList.remove('exit-right');
             entry.target.classList.add('visible');
-          } else {
-            // Only animate out if the row has been revealed before
-            if (!entry.target.classList.contains('visible')) return;
-
-            // Leaving: if it's going up (user scrolled back up), exit right
-            var rect = entry.boundingClientRect;
-            if (rect.top > window.innerHeight * 0.5) {
-              // Row is below viewport center — it left downward, slide right
-              entry.target.classList.remove('visible');
-              entry.target.classList.add('exit-right');
-            }
           }
         });
       },
       {
-        threshold: 0.1,
-        rootMargin: '-20% 0px 0px 0px',
+        threshold: 0.15,
+        rootMargin: '0px 0px -60px 0px',
       }
     );
 
