@@ -26,13 +26,17 @@
 
   revealElements.forEach((el) => revealObserver.observe(el));
 
-  // --- Service Row Active Highlighting ---
-  // Continuously highlights the row closest to the viewport center
-  var serviceRows = document.querySelectorAll('.service-row');
+  // --- Service Row Scroll Snap & Active Highlighting ---
+  var serviceRows = Array.prototype.slice.call(document.querySelectorAll('.service-row'));
+  var servicesSection = document.getElementById('paslaugos');
 
-  if (serviceRows.length) {
+  if (serviceRows.length && servicesSection) {
+    var currentIndex = 0;
+    var isSnapping = false;
+    var snapCooldown = false;
     var activeRow = null;
 
+    // Highlight the row closest to viewport center (runs on every scroll)
     function updateActiveRow() {
       var viewportCenter = window.innerHeight / 2;
       var closest = null;
@@ -40,7 +44,6 @@
 
       serviceRows.forEach(function (row) {
         var rect = row.getBoundingClientRect();
-        // Skip rows that are fully off-screen
         if (rect.bottom < 0 || rect.top > window.innerHeight) return;
         var rowCenter = rect.top + rect.height / 2;
         var dist = Math.abs(rowCenter - viewportCenter);
@@ -59,6 +62,73 @@
 
     window.addEventListener('scroll', updateActiveRow, { passive: true });
     updateActiveRow();
+
+    // Check if the services section is in the "snap zone"
+    function isSectionActive() {
+      var rect = servicesSection.getBoundingClientRect();
+      var navHeight = nav ? nav.offsetHeight : 72;
+      // Section top is at or above the nav, and bottom is still below viewport center
+      return rect.top <= navHeight + 20 && rect.bottom > window.innerHeight * 0.5;
+    }
+
+    // Find which row index is closest to viewport center
+    function getClosestRowIndex() {
+      var viewportCenter = window.innerHeight / 2;
+      var best = 0;
+      var bestDist = Infinity;
+      serviceRows.forEach(function (row, i) {
+        var rect = row.getBoundingClientRect();
+        var dist = Math.abs(rect.top + rect.height / 2 - viewportCenter);
+        if (dist < bestDist) {
+          bestDist = dist;
+          best = i;
+        }
+      });
+      return best;
+    }
+
+    // Snap-scroll to a specific row
+    function snapToRow(index) {
+      if (index < 0 || index >= serviceRows.length) return;
+      isSnapping = true;
+      var navHeight = nav ? nav.offsetHeight : 72;
+      var rowRect = serviceRows[index].getBoundingClientRect();
+      var targetY = window.scrollY + rowRect.top - navHeight - (window.innerHeight - navHeight - rowRect.height) / 2;
+
+      window.scrollTo({ top: targetY, behavior: 'smooth' });
+
+      // Release snap lock after the animation settles
+      setTimeout(function () {
+        isSnapping = false;
+      }, 500);
+    }
+
+    // Wheel handler — hijack scrolling inside the services section
+    window.addEventListener('wheel', function (e) {
+      if (isSnapping || snapCooldown) {
+        e.preventDefault();
+        return;
+      }
+
+      if (!isSectionActive()) return;
+
+      currentIndex = getClosestRowIndex();
+
+      var direction = e.deltaY > 0 ? 1 : -1;
+      var nextIndex = currentIndex + direction;
+
+      // If we'd go past the edges, let normal scroll take over
+      if (nextIndex < 0 || nextIndex >= serviceRows.length) return;
+
+      e.preventDefault();
+      snapCooldown = true;
+      snapToRow(nextIndex);
+
+      // Cooldown prevents rapid multi-snap from a single flick
+      setTimeout(function () {
+        snapCooldown = false;
+      }, 600);
+    }, { passive: false });
   }
 
   // --- Navigation scroll state ---
