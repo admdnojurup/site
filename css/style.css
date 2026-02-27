@@ -663,6 +663,11 @@ img {
   overflow: hidden;
 }
 
+.featured__image img {
+  width: 100%;
+  display: block;
+}
+
 .featured__placeholder {
   display: flex;
   flex-direction: column;
