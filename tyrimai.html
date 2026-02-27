@@ -570,7 +570,33 @@
         <p class="cta__text">
           Nemokamos konsultacijos metu išanalizuosime jūsų procesus ir parodysime, kur automatizacija duotų didžiausią efektą.
         </p>
-        <a href="mailto:info@nclaude.lt" class="btn btn--white btn--lg">Rezervuoti nemokamą konsultaciją</a>
+        <form class="cta__form" id="contact-form">
+          <div class="cta__form-row">
+            <div class="cta__field">
+              <label for="contact-name" class="cta__label">Vardas</label>
+              <input type="text" id="contact-name" name="name" class="cta__input" placeholder="Jūsų vardas" required>
+            </div>
+            <div class="cta__field">
+              <label for="contact-email" class="cta__label">El. paštas</label>
+              <input type="email" id="contact-email" name="email" class="cta__input" placeholder="jusu@imone.lt" required>
+            </div>
+          </div>
+          <div class="cta__field">
+            <label for="contact-company" class="cta__label">Įmonė</label>
+            <input type="text" id="contact-company" name="company" class="cta__input" placeholder="Įmonės pavadinimas">
+          </div>
+          <div class="cta__field">
+            <label for="contact-message" class="cta__label">Žinutė</label>
+            <textarea id="contact-message" name="message" class="cta__input cta__textarea" rows="4" placeholder="Trumpai aprašykite, kokius procesus norėtumėte automatizuoti ar pagerinti..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn--white btn--lg cta__submit">Rezervuoti nemokamą konsultaciją</button>
+          <p class="cta__form-note">Atsakysime per 24 valandas darbo dienomis.</p>
+        </form>
+        <div class="cta__success" id="contact-success" hidden>
+          <div class="cta__success-icon">&#10003;</div>
+          <h3 class="cta__success-title">Žinutė išsiųsta!</h3>
+          <p class="cta__success-text">Dėkojame už kreipimąsi. Susisieksime su jumis artimiausiu metu.</p>
+        </div>
       </div>
     </div>
   </section>
