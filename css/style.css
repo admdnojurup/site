@@ -119,7 +119,7 @@ img {
   transform: translateY(0);
 }
 
-/* Service rows — slide in from right, staggered */
+/* Service rows — slide in from right, triggered individually by scroll */
 .service-row.reveal {
   opacity: 0;
   transform: translateX(60px);
@@ -129,14 +129,6 @@ img {
 
 .service-row.reveal.visible {
   transform: translateX(0);
-}
-
-.service-row.reveal:nth-child(2) {
-  transition-delay: 0.15s;
-}
-
-.service-row.reveal:nth-child(3) {
-  transition-delay: 0.3s;
 }
 
 .process__steps .process__card.reveal:nth-child(3) { transition-delay: 0.1s; }

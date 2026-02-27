@@ -59,30 +59,27 @@
     window.addEventListener('scroll', updateActiveRow, { passive: true });
     updateActiveRow();
 
-    // Reveal all rows together when the section enters viewport (stagger via CSS)
-    var rowsContainer = serviceRows[0].parentElement;
-    var rowObserver = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            serviceRows.forEach(function (row) {
-              row.classList.add('visible');
-            });
-            rowObserver.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.2,
-        rootMargin: '0px 0px -80px 0px',
-      }
-    );
-
-    // Exclude service rows from the generic reveal observer, observe container instead
+    // Reveal rows as each one enters the viewport (stagger via scroll timing)
     serviceRows.forEach(function (row) {
       revealObserver.unobserve(row);
+
+      var singleRowObserver = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              singleRowObserver.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+          rootMargin: '0px 0px -25% 0px',
+        }
+      );
+
+      singleRowObserver.observe(row);
     });
-    rowObserver.observe(rowsContainer);
   }
 
   // --- Navigation scroll state ---
