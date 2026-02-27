@@ -446,7 +446,7 @@ img {
 }
 
 .clients__logo img {
-  max-width: clamp(40px, var(--img-logo-max-w), 200px);
+  max-width: 100%;
   max-height: clamp(16px, var(--img-logo-max-h), 80px);
   object-fit: contain;
   opacity: 0.65;
@@ -1299,4 +1299,45 @@ img {
     font-size: 15px;
     padding: 24px 0;
   }
+}
+
+/* --- Per-image size overrides --- */
+
+[data-img-id="client-a"] {
+  width: 169px;
+  transform: scale(1.18);
+  transform-origin: center;
+}
+
+[data-img-id="client-b"] {
+  width: 92px;
+  height: 32px;
+  transform: scale(1.53);
+  transform-origin: center;
+}
+
+[data-img-id="client-c"] {
+  width: 71px;
+  height: 32px;
+  object-fit: cover;
+  transform: scale(1.68);
+  transform-origin: center;
+}
+
+[data-img-id="client-d"] {
+  width: 101px;
+  height: 16px;
+  object-fit: cover;
+  transform: scale(1.64);
+  transform-origin: center;
+}
+
+[data-img-id="client-e"] {
+  transform: scale(0.8);
+  transform-origin: center;
+}
+
+[data-img-id="case-engineering"] {
+  width: 522px;
+  height: 177px;
 }
