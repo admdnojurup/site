@@ -195,28 +195,18 @@
 .case-visual__titlebar {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 12px 16px;
-  background: var(--color-bg-alt);
-  border-bottom: 1px solid var(--color-border-light);
+  justify-content: center;
+  padding: 14px 16px;
+  background: #2563eb;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
-
-.case-visual__dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--color-border);
-}
-
-.case-visual__dot:first-child { background: #ff5f57; }
-.case-visual__dot:nth-child(2) { background: #ffbd2e; }
-.case-visual__dot:nth-child(3) { background: #28c840; }
 
 .case-visual__window-title {
-  margin-left: 8px;
   font-family: var(--font-ui);
-  font-size: 12px;
-  color: var(--color-text-tertiary);
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.02em;
 }
 
 .case-visual__caption {
