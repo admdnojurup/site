@@ -1,0 +1,554 @@
+/* ========================================
+   Atvejai (Case Studies) — Page Styles
+   ======================================== */
+
+/* --- Case Hero --- */
+.case-hero {
+  position: relative;
+  padding: calc(var(--nav-height) + 80px) 0 100px;
+  overflow: hidden;
+}
+
+.case-hero__bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
+}
+
+.case-hero__gradient {
+  position: absolute;
+  top: -30%;
+  right: -10%;
+  width: 70%;
+  height: 130%;
+  background: radial-gradient(
+    ellipse at 50% 40%,
+    rgba(217, 119, 87, 0.06) 0%,
+    rgba(217, 119, 87, 0.015) 45%,
+    transparent 70%
+  );
+  filter: blur(60px);
+}
+
+.case-hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+}
+
+.case-hero__badge {
+  display: inline-block;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+  background-color: rgba(217, 119, 87, 0.08);
+  padding: 6px 14px;
+  border-radius: 100px;
+  margin-bottom: 28px;
+}
+
+.case-hero__client-logo {
+  margin-bottom: 32px;
+}
+
+.case-hero__client-logo img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.8;
+}
+
+.case-hero__title {
+  font-size: clamp(32px, 4.5vw, 56px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  margin-bottom: 24px;
+}
+
+.case-hero__title-accent {
+  display: block;
+  color: var(--color-accent);
+}
+
+.case-hero__text {
+  font-size: clamp(17px, 1.8vw, 20px);
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  max-width: 600px;
+}
+
+/* --- Case Stats --- */
+.case-stats {
+  padding: 56px 0;
+  border-top: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
+  background-color: var(--color-bg-alt);
+}
+
+.case-stats__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.case-stats__card {
+  text-align: center;
+}
+
+.case-stats__number {
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}
+
+.case-stats__label {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+/* --- Case Story --- */
+.case-story {
+  padding: 100px 0;
+}
+
+/* --- Case Chapter --- */
+.case-chapter {
+  margin-bottom: 48px;
+}
+
+.case-chapter__number {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-accent);
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+}
+
+.case-chapter__title {
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.case-chapter__text {
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--color-text-secondary);
+  margin-bottom: 16px;
+}
+
+.case-chapter__text:last-child {
+  margin-bottom: 0;
+}
+
+.case-chapter__text strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+/* --- Case Visual (Chat / Dashboard placeholders) --- */
+.case-visual {
+  margin: 48px 0 72px;
+}
+
+.case-visual__window {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background: var(--color-card);
+  box-shadow: var(--shadow-lg);
+}
+
+.case-visual__titlebar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: var(--color-bg-alt);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.case-visual__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-border);
+}
+
+.case-visual__dot:first-child { background: #ff5f57; }
+.case-visual__dot:nth-child(2) { background: #ffbd2e; }
+.case-visual__dot:nth-child(3) { background: #28c840; }
+
+.case-visual__window-title {
+  margin-left: 8px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--color-text-tertiary);
+}
+
+.case-visual__caption {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--color-text-tertiary);
+  text-align: center;
+  margin-top: 16px;
+}
+
+/* Chat */
+.case-visual__chat {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.case-chat__msg {
+  max-width: 80%;
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  line-height: 1.6;
+  position: relative;
+}
+
+.case-chat__name {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+
+.case-chat__msg--user {
+  align-self: flex-end;
+  background: var(--color-bg-alt);
+  color: var(--color-text);
+}
+
+.case-chat__msg--user .case-chat__name {
+  color: var(--color-text-tertiary);
+}
+
+.case-chat__msg--agent {
+  align-self: flex-start;
+  background: var(--color-bg-dark);
+  color: var(--color-text-light);
+}
+
+.case-chat__msg--agent .case-chat__name {
+  color: var(--color-accent);
+}
+
+/* Dashboard */
+.case-visual__dashboard {
+  padding: 24px;
+}
+
+.case-dash__row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.case-dash__card {
+  padding: 20px;
+  border-radius: var(--radius-md);
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border-light);
+}
+
+.case-dash__card-label {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--color-text-tertiary);
+  margin-bottom: 8px;
+}
+
+.case-dash__card-value {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+}
+
+.case-dash__card-change {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.case-dash__card-change--up {
+  color: #2a9d6e;
+}
+
+/* Table */
+.case-dash__table {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border-light);
+}
+
+.case-dash__table-header,
+.case-dash__table-row {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 1fr;
+  gap: 12px;
+  padding: 12px 16px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  align-items: center;
+}
+
+.case-dash__table-header {
+  background: var(--color-bg-alt);
+  font-weight: 600;
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 11px;
+}
+
+.case-dash__table-row {
+  border-top: 1px solid var(--color-border-light);
+  color: var(--color-text-secondary);
+}
+
+.case-dash__status {
+  font-weight: 500;
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 100px;
+  display: inline-block;
+}
+
+.case-dash__status--sent { background: rgba(42, 157, 110, 0.1); color: #2a9d6e; }
+.case-dash__status--new { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+.case-dash__status--follow { background: rgba(217, 119, 87, 0.1); color: var(--color-accent); }
+
+.case-dash__priority {
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.case-dash__priority--high { color: var(--color-accent); }
+.case-dash__priority--med { color: var(--color-text-tertiary); }
+
+/* --- Case Highlight (big metric) --- */
+.case-highlight {
+  text-align: center;
+  padding: 56px 40px;
+  background: linear-gradient(145deg, rgba(217, 119, 87, 0.06) 0%, rgba(217, 119, 87, 0.02) 100%);
+  border: 1px solid rgba(217, 119, 87, 0.12);
+  border-radius: var(--radius-xl);
+  margin: 48px 0 72px;
+}
+
+.case-highlight__metric {
+  font-family: var(--font-heading);
+  font-size: clamp(40px, 6vw, 64px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: var(--color-accent);
+  margin-bottom: 12px;
+}
+
+.case-highlight__text {
+  font-size: 18px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.case-highlight__text strong {
+  color: var(--color-text);
+}
+
+/* --- Case Capabilities --- */
+.case-capabilities {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 48px;
+}
+
+.case-cap {
+  display: flex;
+  gap: 20px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.case-cap:first-child {
+  border-top: 1px solid var(--color-border-light);
+}
+
+.case-cap__icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, rgba(217, 119, 87, 0.1) 0%, rgba(217, 119, 87, 0.03) 100%);
+  border: 1px solid rgba(217, 119, 87, 0.15);
+  border-radius: var(--radius-sm);
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.case-cap__title {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+
+.case-cap__text {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+}
+
+/* --- Case Timeline --- */
+.case-timeline {
+  padding: 100px 0;
+  background-color: var(--color-bg-alt);
+}
+
+.case-timeline__items {
+  position: relative;
+  padding-left: 32px;
+}
+
+.case-timeline__items::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--color-border);
+}
+
+.case-timeline__item {
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.case-timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+.case-timeline__marker {
+  position: absolute;
+  left: -32px;
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-card);
+  border: 2px solid var(--color-border);
+  z-index: 1;
+}
+
+.case-timeline__marker--accent {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.case-timeline__label {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+  margin-bottom: 6px;
+}
+
+.case-timeline__title {
+  font-size: 19px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+
+.case-timeline__text {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .case-hero {
+    padding: calc(var(--nav-height) + 48px) 0 64px;
+  }
+
+  .case-stats__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .case-story {
+    padding: 64px 0;
+  }
+
+  .case-dash__row {
+    grid-template-columns: 1fr;
+  }
+
+  .case-dash__table-header,
+  .case-dash__table-row {
+    grid-template-columns: 1.5fr 1.5fr 1fr 1fr;
+    font-size: 11px;
+    gap: 8px;
+    padding: 10px 12px;
+  }
+
+  .case-chat__msg {
+    max-width: 90%;
+  }
+
+  .case-timeline {
+    padding: 64px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .case-stats__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .case-highlight {
+    padding: 40px 24px;
+  }
+
+  .case-dash__table-header,
+  .case-dash__table-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .case-dash__table-header span:nth-child(3),
+  .case-dash__table-header span:nth-child(4),
+  .case-dash__table-row span:nth-child(3),
+  .case-dash__table-row span:nth-child(4) {
+    display: none;
+  }
+}
