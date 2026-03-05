@@ -858,6 +858,30 @@ img {
   color: var(--color-text-light-secondary);
 }
 
+.result-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: none;
+  margin-top: 16px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.result-card:hover .result-card__cta {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.result-card__cta:hover {
+  text-decoration: underline;
+}
+
 /* --- Why Us --- */
 .why {
   padding: 120px 0;
