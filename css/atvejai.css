@@ -30,10 +30,28 @@
   filter: blur(60px);
 }
 
-.case-hero__content {
+.case-hero__inner {
   position: relative;
   z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.case-hero__content {
   max-width: 720px;
+}
+
+.case-hero__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.case-hero__image img {
+  max-width: 100%;
+  height: auto;
 }
 
 .case-hero__badge {
@@ -498,6 +516,11 @@
 @media (max-width: 768px) {
   .case-hero {
     padding: calc(var(--nav-height) + 48px) 0 64px;
+  }
+
+  .case-hero__inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
   }
 
   .case-stats__grid {
