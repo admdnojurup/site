@@ -254,18 +254,19 @@
 
 .case-chat__msg--user {
   align-self: flex-end;
-  background: var(--color-bg-alt);
-  color: var(--color-text);
+  background: #2563eb;
+  color: #fff;
 }
 
 .case-chat__msg--user .case-chat__name {
-  color: var(--color-text-tertiary);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .case-chat__msg--agent {
   align-self: flex-start;
-  background: var(--color-bg-dark);
-  color: var(--color-text-light);
+  background: #ffffff;
+  color: #1a1a1a;
+  border: 1px solid var(--color-border-light);
 }
 
 .case-chat__msg--agent .case-chat__name {
