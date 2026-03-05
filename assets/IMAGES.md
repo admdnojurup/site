@@ -10,7 +10,7 @@
 - `client-c.png` — kliento C logotipas
 - `client-d.png` — kliento D logotipas
 - `client-e.png` — kliento E logotipas
-- `client-f.png` — kliento F logotipas
+- `client-f.svg` — kliento F logotipas
 - `case-manufacturing.jpg` — rezultatų sekcija: gamybinė įmonė
 - `case-finance.jpg` — rezultatų sekcija: finansinių paslaugų įmonė
 - `case-engineering.jpg` — rezultatų sekcija: inžinerinė įmonė

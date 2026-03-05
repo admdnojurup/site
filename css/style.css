@@ -457,6 +457,7 @@ img {
 
 .clients__logo img {
   max-width: 100%;
+  width: clamp(40px, var(--img-logo-max-w, 140px), 200px);
   max-height: clamp(16px, var(--img-logo-max-h), 80px);
   object-fit: contain;
   opacity: 0.65;
