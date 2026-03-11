@@ -180,7 +180,7 @@
       var company = contactForm.querySelector('[name="company"]').value.trim();
       var message = contactForm.querySelector('[name="message"]').value.trim();
 
-      var recipient = 'info@nclaude.lt';
+      var recipient = 'nojus@eiternus.com';
       var subject = encodeURIComponent('Konsultacijos užklausa – ' + (company || name));
       var body = encodeURIComponent(
         'Vardas: ' + name + '\n' +
